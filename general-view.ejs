@@ -1,0 +1,865 @@
+<%- include('header', {currentMenu: 'general-view', pageTitle: 'General View'}); %>
+    <div class="row m-0 mt-1">
+		<div class="col-lg-2" style="padding-top: 305px;">
+			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-1-btn" data-induct-gui-id="1">Disable Priorty Pak-5</button>
+			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-2-btn" data-induct-gui-id="2">Disable Priorty Pak-4</button>
+			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-3-btn" data-induct-gui-id="3">Disable Priorty Pak-3</button>
+			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-4-btn" data-induct-gui-id="4">Disable Priorty Pak-2</button>
+			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-5-btn" data-induct-gui-id="5">Disable Priorty Pak-1</button>
+			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-6-btn" data-induct-gui-id="6">Disable Tfold-2</button>
+			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-7-btn" data-induct-gui-id="7">Disable Tfold-1</button>
+		</div>
+        <div class="col-lg-8" style="padding: 0 50px; text-align: center;">
+			<svg style="height: 630px;" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 480">
+				<defs>
+					<style>
+						.cls-1,.cls-13,.cls-26{fill:none;}.cls-2,.cls-9{fill:#f1f1f2;}.cls-3{fill:#e6e7e8;}.cls-4,.cls-5{font-size:12.442px;fill:#58595b;}.cls-4{font-family:Trebuchet MS;}.cls-5{font-family:Trebuchet MS;}
+						.cls-6{fill:#27e22b;}
+						.cls-7{fill:#f16522; cursor: pointer;}
+						.cls-8{fill:#bbbdbf;}.cls-9{stroke:#27e22b;}.cls-13,.cls-9{stroke-miterlimit:10;}.cls-10{fill:#d0d2d3;}.cls-11{fill:#fff;}.cls-12{clip-path:url(#clip-path);}.cls-13{stroke:#000;}.cls-14{clip-path:url(#clip-path-2);}.cls-15{clip-path:url(#clip-path-3);}.cls-16{clip-path:url(#clip-path-4);}.cls-17{clip-path:url(#clip-path-5);}.cls-18{clip-path:url(#clip-path-6);}.cls-19{clip-path:url(#clip-path-7);}.cls-20{clip-path:url(#clip-path-8);}.cls-21{clip-path:url(#clip-path-9);}.cls-22{clip-path:url(#clip-path-10);}.cls-23{clip-path:url(#clip-path-11);}.cls-24{clip-path:url(#clip-path-12);}.cls-25{clip-path:url(#clip-path-13);}.cls-26{stroke:#f1f1f2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}
+						@keyframes partial-full {
+							from {fill: #58595b;}
+							to {fill: #4d80ff;}
+						}
+			
+						@keyframes pe-blocked {
+							from {fill: #58595b;}
+							to {fill: #FFBF00;}
+						}
+			
+						.cls-blink{
+							fill: #58595b;
+							animation-name: partial-full;
+							animation-duration: 0.2s;
+							animation-iteration-count: infinite;
+							animation-direction: alternate;
+						}
+			
+						.cls-blink2 {
+							fill: #58595b;
+							animation-name: pe-blocked;
+							animation-duration: 0.2s;
+							animation-iteration-count: infinite;
+							animation-direction: alternate;
+						}
+			
+						.cls-conveyor-0 {
+							fill: #6d6e70;
+						}
+			
+						.cls-conveyor-1 {
+							fill: #4f7942;
+						}
+			
+						.cls-conveyor-2 {
+							fill: #4B5320;
+						}
+			
+						.cls-conveyor-3 {
+							fill: red;
+						}
+			
+						.cls-induct-0 {
+							stroke: black;
+						}
+			
+						.cls-induct-1 {
+							stroke: red;
+						}
+			
+						.cls-induct-2 {
+							stroke: green;
+						}
+			
+						.cls-induct-3 {
+							stroke: orange;
+						}
+
+						.navigate-induct, .mod-sorter {
+							cursor: pointer;
+						}
+					</style>
+					<clipPath id="clip-path">
+					<circle class="cls-1" cx="550.692" cy="51.445" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-2">
+					<circle class="cls-1" cx="90.394" cy="49.187" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-3">
+					<circle class="cls-1" cx="62.51" cy="49.187" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-4">
+					<circle class="cls-1" cx="25.332" cy="74.741" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-5">
+					<circle class="cls-1" cx="25.912" cy="105.344" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-6">
+					<circle class="cls-1" cx="63.162" cy="111.372" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-7">
+					<circle class="cls-1" cx="180.675" cy="112.849" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-8">
+					<circle class="cls-1" cx="220.165" cy="133.831" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-9">
+					<circle class="cls-1" cx="220.165" cy="147.28" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-10">
+					<circle class="cls-1" cx="220.165" cy="160.73" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-11">
+					<circle class="cls-1" cx="220.165" cy="174.179" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-12">
+					<circle class="cls-1" cx="190.238" cy="164.95" r="5.332"/>
+					</clipPath>
+					<clipPath id="clip-path-13">
+					<circle class="cls-1" cx="190.238" cy="182.136" r="5.332"/>
+					</clipPath>
+				</defs>
+				<polygon class="cls-2" points="492.393 34.466 483.95 34.466 482.173 62.274 483.95 90.083 492.393 90.083 494.17 62.274 492.393 34.466"/>
+				<polygon class="cls-2" points="465.133 34.466 456.69 34.466 454.912 62.274 456.69 90.083 465.133 90.083 466.91 62.274 465.133 34.466"/>
+				<polygon class="cls-2" points="437.872 34.466 429.429 34.466 427.652 62.274 429.429 90.083 437.872 90.083 439.65 62.274 437.872 34.466"/>
+				<polygon class="cls-2" points="410.612 34.466 402.169 34.466 400.391 62.274 402.169 90.083 410.612 90.083 412.389 62.274 410.612 34.466"/>
+				<polygon class="cls-2" points="383.352 34.466 374.909 34.466 373.131 62.274 374.909 90.083 383.352 90.083 385.129 62.274 383.352 34.466"/>
+				<polygon class="cls-2" points="356.091 34.466 347.648 34.466 345.871 62.274 347.648 90.083 356.091 90.083 357.869 62.274 356.091 34.466"/>
+				<polygon class="cls-2" points="328.831 34.466 320.388 34.466 318.611 62.274 320.388 90.083 328.831 90.083 330.608 62.274 328.831 34.466"/>
+				<polygon class="cls-2" points="301.57 34.466 293.128 34.466 291.35 62.274 293.128 90.083 301.57 90.083 303.348 62.274 301.57 34.466"/>
+				<polygon class="cls-2" points="274.31 34.466 265.867 34.466 264.09 62.274 265.867 90.083 274.31 90.083 276.088 62.274 274.31 34.466"/>
+				<polygon class="cls-2" points="247.05 34.466 238.607 34.466 236.83 62.274 238.607 90.083 247.05 90.083 248.827 62.274 247.05 34.466"/>
+				<polygon class="cls-2" points="219.79 34.466 211.347 34.466 209.569 62.274 211.347 90.083 219.79 90.083 221.567 62.274 219.79 34.466"/>
+				<polygon class="cls-2" points="192.529 34.466 184.086 34.466 182.309 62.274 184.086 90.083 192.529 90.083 194.307 62.274 192.529 34.466"/>
+				<polygon class="cls-2" points="165.269 34.466 156.826 34.466 155.049 62.274 156.826 90.083 165.269 90.083 167.046 62.274 165.269 34.466"/>
+				<polygon class="cls-2" points="138.009 34.466 129.566 34.466 127.788 62.274 129.566 90.083 138.009 90.083 139.786 62.274 138.009 34.466"/>
+				<polygon class="cls-2" points="110.748 34.466 102.305 34.466 100.528 62.274 102.305 90.083 110.748 90.083 112.526 62.274 110.748 34.466"/>
+				<rect id="bin-30" class="cls-3" x="477.087" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(481.994 35.651)">30</text>
+				<rect id="bin-29" class="cls-3" x="477.087" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(481.994 94.056)">29</text>
+				<rect id="bin-19" class="cls-3" x="340.785" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(345.488 94.056)">19</text>
+				<rect id="bin-20" class="cls-3" x="340.785" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-5" transform="translate(344.951 35.655)">20</text>
+				<rect id="bin-9" class="cls-3" x="204.483" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(212.377 94.056)">9</text>
+				<rect id="bin-10" class="cls-3" x="204.483" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(209.185 35.655)">10</text>
+				<rect id="bin-12" class="cls-3" x="231.744" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(236.736 35.655)">12</text>
+				<rect id="bin-14" class="cls-3" x="259.004" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(263.398 35.655)">14</text>
+				<rect id="bin-16" class="cls-3" x="286.264" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(290.949 35.655)">16</text>
+				<rect id="bin-18" class="cls-3" x="313.525" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(318.5 35.655)">18</text>
+				<rect id="bin-11" class="cls-3" x="231.744" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(236.736 94.311)">11</text>
+				<rect id="bin-13" class="cls-3" x="259.004" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(263.398 94.311)">13</text>
+				<rect id="bin-15" class="cls-3" x="286.264" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(290.949 94.311)">15</text>
+				<rect id="bin-17" class="cls-3" x="313.525" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(318.5 94.311)">17</text>
+				<rect id="bin-22" class="cls-3" x="368.045" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(372.71 35.655)">22</text>
+				<rect id="bin-24" class="cls-3" x="395.306" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(399.373 35.655)">24</text>
+				<rect id="bin-26" class="cls-3" x="422.566" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(426.923 35.655)">26</text>
+				<rect id="bin-28" class="cls-3" x="449.826" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(454.472 35.655)">28</text>
+				<rect id="bin-21" class="cls-3" x="368.045" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(372.71 94.311)">21</text>
+				<rect id="bin-23" class="cls-3" x="395.306" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(399.373 94.311)">23</text>
+				<rect id="bin-25" class="cls-3" x="422.566" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(426.923 94.311)">25</text>
+				<rect id="bin-27" class="cls-3" x="449.826" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(454.472 94.311)">27</text>
+				<rect id="bin-1" class="cls-3" x="95.442" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(103.335 94.056)">1</text>
+				<rect id="bin-3" class="cls-3" x="122.702" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(130.595 94.056)">3</text>
+				<rect id="bin-5" class="cls-3" x="149.963" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(157.857 94.056)">5</text>
+				<rect id="bin-7" class="cls-3" x="177.223" y="78.475" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(185.117 94.056)">7</text>
+				<rect id="bin-2" class="cls-3" x="95.442" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(103.335 35.655)">2</text>
+				<rect id="bin-4" class="cls-3" x="122.702" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(130.595 35.655)">4</text>
+				<rect id="bin-6" class="cls-3" x="149.963" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(157.857 35.655)">6</text>
+				<rect id="bin-8" class="cls-3" x="177.223" y="19.944" width="22.17" height="24.952" rx="5.282"/>
+				<text class="cls-4" transform="translate(185.117 35.655)">8</text>
+				<path class="cls-2" d="M546.785,67.281,560.7,65.907V57.464L546.785,56.09a3.717,3.717,0,0,0-4.082,3.7v3.793A3.716,3.716,0,0,0,546.785,67.281Z"/>
+				<rect id="bin-31" class="cls-3" x="555.048" y="50.601" width="24.952" height="22.17" rx="5.282"/>
+				<text class="cls-4" transform="translate(562.074 65.73)">31</text>
+				<path class="cls-3" d="M93.813,52.694H542.738a3.792,3.792,0,0,1,3.792,3.792v10.4a3.791,3.791,0,0,1-3.791,3.791H93.813a3.792,3.792,0,0,1-3.792-3.792v-10.4A3.792,3.792,0,0,1,93.813,52.694Z"/>
+				<path id="conv-1" class="cls-6" d="M542.738,53.194a3.3,3.3,0,0,1,3.292,3.291v10.4a3.3,3.3,0,0,1-3.292,3.291H93.813a3.294,3.294,0,0,1-3.291-3.291v-10.4a3.3,3.3,0,0,1,3.291-3.291H542.738m0-1H93.813a4.291,4.291,0,0,0-4.291,4.291v10.4a4.291,4.291,0,0,0,4.291,4.291H542.738a4.292,4.292,0,0,0,4.292-4.291v-10.4a4.292,4.292,0,0,0-4.292-4.291Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="1" d="M113.637,55.211H99.417a.443.443,0,0,0-.444.444V67.716a.443.443,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,113.637,55.211Zm-.445,12.061H99.861V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="1" d="M102.164,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="1" d="M102.164,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="1" d="M102.164,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="1" d="M102.164,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="2" d="M140.9,55.211h-14.22a.444.444,0,0,0-.444.444V67.716a.444.444,0,0,0,.444.444H140.9a.443.443,0,0,0,.444-.444V55.655A.443.443,0,0,0,140.9,55.211Zm-.444,12.061H127.122V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="2" d="M129.425,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="2" d="M129.424,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="2" d="M129.424,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="2" d="M129.424,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="3" d="M168.157,55.211H153.938a.444.444,0,0,0-.445.444V67.716a.444.444,0,0,0,.445.444h14.219a.444.444,0,0,0,.445-.444V55.655A.444.444,0,0,0,168.157,55.211Zm-.444,12.061H154.382V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="3" d="M156.685,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="3" d="M156.685,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="3" d="M156.685,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="3" d="M156.685,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="4" d="M195.418,55.211H181.2a.443.443,0,0,0-.444.444V67.716a.443.443,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,195.418,55.211Zm-.445,12.061H181.642V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="4" d="M183.945,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="4" d="M183.945,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="4" d="M183.945,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="4" d="M183.945,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="5" d="M222.678,55.211h-14.22a.444.444,0,0,0-.444.444V67.716a.444.444,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,222.678,55.211Zm-.444,12.061H208.9V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="5" d="M211.206,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="5" d="M211.205,61.046h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="5" d="M211.205,63.6h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="5" d="M211.205,66.154h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="6" d="M249.938,55.211H235.719a.444.444,0,0,0-.445.444V67.716a.444.444,0,0,0,.445.444h14.219a.444.444,0,0,0,.445-.444V55.655A.444.444,0,0,0,249.938,55.211Zm-.444,12.061H236.163V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="6" d="M238.466,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="6" d="M238.466,61.046h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="6" d="M238.466,63.6h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="6" d="M238.466,66.154h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="7" d="M277.2,55.211h-14.22a.443.443,0,0,0-.444.444V67.716a.443.443,0,0,0,.444.444H277.2a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,277.2,55.211Zm-.445,12.061H263.423V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="7" d="M265.726,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="7" d="M265.726,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="7" d="M265.726,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="7" d="M265.726,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="8" d="M304.459,55.211h-14.22a.444.444,0,0,0-.444.444V67.716a.444.444,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,304.459,55.211Zm-.444,12.061H290.684V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="8" d="M292.987,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="8" d="M292.986,61.046h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="8" d="M292.986,63.6h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="8" d="M292.986,66.154h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="9" d="M331.719,55.211H317.5a.444.444,0,0,0-.445.444V67.716a.444.444,0,0,0,.445.444h14.219a.444.444,0,0,0,.445-.444V55.655A.444.444,0,0,0,331.719,55.211Zm-.444,12.061H317.944V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="9" d="M320.247,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="9" d="M320.247,61.046h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="9" d="M320.247,63.6h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="9" d="M320.247,66.154h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="10" d="M358.98,55.211H344.76a.443.443,0,0,0-.444.444V67.716a.443.443,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,358.98,55.211Zm-.445,12.061H345.2V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="10" d="M347.507,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="10" d="M347.507,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="10" d="M347.507,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="10" d="M347.507,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="11" d="M386.24,55.211H372.02a.444.444,0,0,0-.444.444V67.716a.444.444,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,386.24,55.211ZM385.8,67.272H372.465V56.1H385.8Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="11" d="M374.768,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="11" d="M374.767,61.046h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="11" d="M374.767,63.6h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="11" d="M374.767,66.154h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="12" d="M413.5,55.211H399.281a.444.444,0,0,0-.445.444V67.716a.444.444,0,0,0,.445.444H413.5a.444.444,0,0,0,.445-.444V55.655A.444.444,0,0,0,413.5,55.211Zm-.444,12.061H399.725V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="12" d="M402.028,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="12" d="M402.028,61.046h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="12" d="M402.028,63.6h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="12" d="M402.028,66.154h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="13" d="M440.761,55.211h-14.22a.443.443,0,0,0-.444.444V67.716a.443.443,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,440.761,55.211Zm-.445,12.061H426.985V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="13" d="M429.288,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="13" d="M429.288,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="13" d="M429.288,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="13" d="M429.288,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="14" d="M468.021,55.211H453.8a.444.444,0,0,0-.444.444V67.716a.444.444,0,0,0,.444.444h14.22a.444.444,0,0,0,.444-.444V55.655A.444.444,0,0,0,468.021,55.211Zm-.444,12.061H454.246V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="14" d="M456.549,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="14" d="M456.548,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="14" d="M456.548,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="14" d="M456.548,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="15" d="M495.281,55.211H481.062a.444.444,0,0,0-.445.444V67.716a.444.444,0,0,0,.445.444h14.219a.444.444,0,0,0,.445-.444V55.655A.444.444,0,0,0,495.281,55.211Zm-.444,12.061H481.506V56.1h13.331Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="15" d="M483.809,58.491h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="15" d="M483.809,61.046h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="15" d="M483.809,63.6h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-7 mod-sorter" data-device-type="2" data-sorter-number="15" d="M483.809,66.154h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<rect class="cls-3" x="78.173" y="57.742" width="9.07" height="7.887"/>
+				<path id="conv-2" class="cls-6" d="M86.744,58.242v6.887H78.673V58.242h8.071m1-1H77.673v8.887H87.744V57.242Z"/>
+				<rect class="cls-3" x="52.4" y="57.742" width="22.995" height="7.888"/>
+				<path id="conv-3" class="cls-6" d="M74.9,58.242v6.887H52.9V58.242H74.9m1-1H51.9v8.887H75.9V57.242Z"/>
+				<rect class="cls-3" x="63.746" y="117.436" width="121.452" height="7.887"/>
+				<path id="conv-7" class="cls-6" d="M184.7,117.936v6.887H64.246v-6.887H184.7m1-1H63.246v8.887H185.7v-8.887Z"/>
+				<rect class="cls-3" x="30.803" y="79.347" width="7.888" height="24.582"/>
+				<path id="conv-5" class="cls-6" d="M38.19,79.847v23.582H31.3V79.847H38.19m1-1H30.3v25.582H39.19V78.847Z"/>
+				<rect class="cls-3" x="198.916" y="139.032" width="11.706" height="6.041"/>
+				<path id="conv-9" class="cls-6" d="M210.122,139.532v5.041H199.416v-5.041h10.706m1-1H198.416v7.041h12.706v-7.041Z"/>
+				<rect class="cls-3" x="198.916" y="147.851" width="11.706" height="6.041"/>
+				<path id="conv-10" class="cls-6" d="M210.122,148.35v5.042H199.416V148.35h10.706m1-1H198.416v7.042h12.706V147.35Z"/>
+				<rect class="cls-3" x="198.916" y="156.669" width="11.706" height="6.042"/>
+				<path id="conv-11" class="cls-6" d="M210.122,157.169v5.042H199.416v-5.042h10.706m1-1H198.416v7.042h12.706v-7.042Z"/>
+				<rect class="cls-3" x="198.916" y="165.488" width="11.706" height="6.042"/>
+				<path id="conv-12" class="cls-6" d="M210.122,165.988v5.041H199.416v-5.041h10.706m1-1H198.416v7.041h12.706v-7.041Z"/>
+				<rect class="cls-3" x="198.916" y="174.307" width="11.706" height="6.042"/>
+				<path id="conv-13" class="cls-6" d="M210.122,174.807v5.041H199.416v-5.041h10.706m1-1H198.416v7.041h12.706v-7.041Z"/>
+				<rect class="cls-3" x="198.916" y="183.126" width="11.706" height="6.042"/>
+				<path id="conv-14" class="cls-6" d="M210.122,183.626v5.041H199.416v-5.041h10.706m1-1H198.416v7.041h12.706v-7.041Z"/>
+				<rect class="cls-3" x="198.916" y="191.944" width="11.706" height="15.455"/>
+				<path id="conv-15" class="cls-6" d="M210.122,192.444V206.9H199.416V192.444h10.706m1-1H198.416V207.9h12.706V191.444Z"/>
+				<path class="cls-3" d="M30.81,76.569A19.348,19.348,0,0,1,49.622,57.748v7.936A11.413,11.413,0,0,0,38.737,76.569Z"/>
+				<path id="conv-4" class="cls-6" d="M49.122,58.268v6.947A11.916,11.916,0,0,0,38.268,76.069H31.33a18.849,18.849,0,0,1,17.792-17.8m1-1.026A19.822,19.822,0,0,0,30.3,77.069h8.923a10.9,10.9,0,0,1,10.9-10.9V57.242Z"/>
+				<path class="cls-3" d="M198.861,136.254a11.412,11.412,0,0,0-10.885-10.885v-7.927c10.217.263,22.257,8.513,22.637,18.812Z"/>
+				<path id="conv-8" class="cls-6" d="M188.476,117.962c9.711.5,20.877,8.168,21.608,17.792H199.33A11.915,11.915,0,0,0,188.476,124.9v-6.939m-1-1.026v8.923a10.9,10.9,0,0,1,10.9,10.895h12.75c0-10.949-12.7-19.818-23.646-19.818Z"/>
+				<path class="cls-3" d="M50.124,125.323A19.345,19.345,0,0,1,30.8,106.505h7.936a11.409,11.409,0,0,0,11.385,10.9l10.845.034v7.889Z"/>
+				<path id="conv-6" class="cls-6" d="M38.27,107.005a11.911,11.911,0,0,0,11.851,10.9l10.348.033v6.89H50.124a18.848,18.848,0,0,1-18.8-17.818H38.27m.959-1H30.3a19.821,19.821,0,0,0,19.827,19.818H61.469v-8.887L50.124,116.9a10.9,10.9,0,0,1-10.9-10.9Z"/>
+				<rect class="cls-3" x="198.916" y="210.177" width="11.706" height="11.673"/>
+				<path id="conv-16" class="cls-6" d="M210.122,210.677V221.35H199.416V210.677h10.706m1-1H198.416V222.35h12.706V209.677Z"/>
+				<path class="cls-8" d="M200.587,212.69h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,215.244h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<path class="cls-8" d="M200.587,217.8h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,220.353h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<rect class="cls-3" x="198.916" y="224.628" width="11.706" height="32.766"/>
+				<path id="conv-17" class="cls-6" d="M210.122,225.128v31.766H199.416V225.128h10.706m1-1H198.416v33.766h12.706V224.128Z"/>
+				<path class="cls-8" d="M200.587,250.863h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,253.417h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<path class="cls-8" d="M200.587,255.971h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<rect class="cls-3" x="198.916" y="260.172" width="11.706" height="32.766"/>
+				<path id="conv-18" class="cls-6" d="M210.122,260.671v31.767H199.416V260.671h10.706m1-1H198.416v33.767h12.706V259.671Z"/>
+				<path class="cls-8" d="M200.587,286.412h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,288.966h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,291.52h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<rect class="cls-3" x="198.916" y="295.715" width="11.706" height="32.767"/>
+				<path id="conv-19" class="cls-6" d="M210.122,296.215v31.767H199.416V296.215h10.706m1-1H198.416v33.767h12.706V295.215Z"/>
+				<path class="cls-8" d="M200.587,321.961h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,324.515h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,1,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,327.069h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<rect class="cls-3" x="198.916" y="331.259" width="11.706" height="32.767"/>
+				<path id="conv-20" class="cls-6" d="M210.122,331.759v31.766H199.416V331.759h10.706m1-1H198.416v33.766h12.706V330.759Z"/>
+				<path class="cls-8" d="M200.587,357.509h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<path class="cls-8" d="M200.587,360.064h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,362.618h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<rect class="cls-3" x="198.916" y="366.803" width="11.706" height="32.766"/>
+				<path id="conv-21" class="cls-6" d="M210.122,367.3v31.766H199.416V367.3h10.706m1-1H198.416v33.766h12.706V366.3Z"/>
+				<path class="cls-8" d="M200.587,393.058h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<path class="cls-8" d="M200.587,395.613h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-8" d="M200.587,398.167h8.4a.508.508,0,1,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<path class="cls-3" d="M201.264,435.113a2.35,2.35,0,0,1-2.348-2.348V402.347h11.706v30.418a2.351,2.351,0,0,1-2.349,2.348Z"/>
+				<path id="conv-22" class="cls-6" d="M210.122,402.847v29.918a1.85,1.85,0,0,1-1.849,1.848h-7.009a1.85,1.85,0,0,1-1.848-1.848V402.847h10.706m1-1H198.416v30.918a2.848,2.848,0,0,0,2.848,2.848h7.009a2.849,2.849,0,0,0,2.849-2.848V401.847Z"/>
+				<path class="cls-8" d="M200.587,428.607h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<path class="cls-8" d="M200.587,431.161h8.4a.508.508,0,1,0,0-1.015h-8.4a.508.508,0,1,0,0,1.015Z"/>
+				<path class="cls-8" d="M200.587,433.716h8.4a.508.508,0,0,0,0-1.016h-8.4a.508.508,0,0,0,0,1.016Z"/>
+				<rect class="cls-3" x="102.636" y="240" width="8.475" height="20.774" transform="translate(308.432 67.386) rotate(70.877)"/>
+				<path class="cls-3" d="M34.952,273.193a2.222,2.222,0,0,1,1.371-2.827L70.988,258.34l.774-.267,2.781,8.007-.773.267L39.1,278.371A2.222,2.222,0,0,1,36.272,277Z"/>
+				<path id="induct-1" data-induct-no="1" class="navigate-induct cls-9" d="M183.563,227.038l12.043-4.123c.575-.2.741-.4.741-1.4l.039-4.21a1.1,1.1,0,0,0-1.4-.68l-13.419,4.653-.079-.229a3.555,3.555,0,0,0-4.523-2.192l-60.57,21a3.555,3.555,0,0,0-2.194,4.524l2.145,6.188a3.555,3.555,0,0,0,4.523,2.194l60.571-21a3.554,3.554,0,0,0,2.194-4.521Z"/>
+				<rect data-induct-no="1" class="navigate-induct cls-3" x="170.502" y="221.508" width="6.101" height="11.518" rx="1.777" transform="translate(331.423 -11.161) rotate(70.877)"/>
+				<rect data-induct-no="1" class="navigate-induct cls-3" x="158.182" y="225.78" width="6.101" height="11.518" rx="1.777" transform="translate(327.175 3.352) rotate(70.877)"/>
+				<rect data-induct-no="1" class="navigate-induct cls-3" x="145.861" y="230.052" width="6.101" height="11.518" rx="1.777" transform="translate(322.927 17.866) rotate(70.877)"/>
+				<rect data-induct-no="1" class="navigate-induct cls-3" x="133.541" y="234.324" width="6.101" height="11.518" rx="1.777" transform="translate(318.679 32.379) rotate(70.877)"/>
+				<rect data-induct-no="1" class="navigate-induct cls-3" x="121.22" y="238.596" width="6.101" height="11.518" rx="1.777" transform="translate(314.43 46.892) rotate(70.877)"/>
+				<rect class="cls-10" x="78.328" y="244.049" width="14.026" height="27.609" rx="3.555" transform="translate(301.008 92.749) rotate(70.877)"/>
+				<rect class="cls-10" x="103.812" y="244.632" width="6.101" height="11.518" rx="1.777" transform="translate(308.428 67.398) rotate(70.877)"/>
+				<path id="induct-7" data-induct-no="7" class="navigate-induct cls-9" d="M183.309,438.064l12.042-4.123c.575-.2.741-.4.741-1.4l.039-4.21a1.1,1.1,0,0,0-1.4-.68L181.312,432.3l-.08-.229a3.555,3.555,0,0,0-4.523-2.192l-49.234,17.071a3.554,3.554,0,0,0-2.194,4.523l2.145,6.188a3.554,3.554,0,0,0,4.523,2.194l49.235-17.071a3.555,3.555,0,0,0,2.195-4.521Z"/>
+				<rect class="navigate-induct cls-10" data-induct-no="7" x="170.248" y="432.534" width="6.101" height="11.518" rx="1.777" transform="translate(530.633 130.974) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="7" x="157.927" y="436.806" width="6.101" height="11.518" rx="1.777" transform="translate(526.385 145.487) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="7" x="145.607" y="441.078" width="6.101" height="11.518" rx="1.777" transform="translate(522.136 160) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="7" x="133.286" y="445.35" width="6.101" height="11.518" rx="1.777" transform="translate(517.888 174.514) rotate(70.877)"/>
+				<path id="induct-6" data-induct-no="6" class="navigate-induct cls-9" d="M183.563,404.163l12.043-4.122c.575-.2.741-.4.741-1.4l.039-4.209a1.1,1.1,0,0,0-1.4-.68L181.566,398.4l-.079-.229a3.556,3.556,0,0,0-4.523-2.192l-49.235,17.071a3.556,3.556,0,0,0-2.194,4.524l2.146,6.188a3.555,3.555,0,0,0,4.523,2.194l49.235-17.071a3.555,3.555,0,0,0,2.194-4.522Z"/>
+				<rect class="navigate-induct cls-10" data-induct-no="6" x="170.502" y="398.633" width="6.101" height="11.518" rx="1.777" transform="translate(498.774 107.939) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="6" x="158.182" y="402.905" width="6.101" height="11.518" rx="1.777" transform="translate(494.526 122.452) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="6" x="145.861" y="407.177" width="6.101" height="11.518" rx="1.777" transform="translate(490.278 136.965) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="6" x="133.541" y="411.449" width="6.101" height="11.518" rx="1.777" transform="translate(486.03 151.478) rotate(70.877)"/>
+				<rect class="cls-3" x="102.636" y="274.901" width="8.475" height="20.774" transform="translate(341.407 90.853) rotate(70.877)"/>
+				<path class="cls-3" d="M34.952,308.093a2.222,2.222,0,0,1,1.371-2.827L70.988,293.24l.774-.266,2.781,8.007-.773.266L39.1,313.271a2.222,2.222,0,0,1-2.827-1.371Z"/>
+				<path id="induct-2" data-induct-no="2" class="navigate-induct cls-9" d="M183.563,261.938l12.043-4.122c.575-.2.741-.4.741-1.4l.039-4.209a1.1,1.1,0,0,0-1.4-.68l-13.419,4.652-.079-.228a3.556,3.556,0,0,0-4.523-2.193l-60.57,21a3.554,3.554,0,0,0-2.194,4.523l2.145,6.188a3.554,3.554,0,0,0,4.523,2.194l60.571-21a3.555,3.555,0,0,0,2.194-4.522Z"/>
+				<rect class="navigate-induct cls-3" data-induct-no="2" x="170.502" y="256.408" width="6.101" height="11.518" rx="1.777" transform="translate(364.398 12.306) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="2" x="158.182" y="260.68" width="6.101" height="11.518" rx="1.777" transform="translate(360.149 26.82) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="2" x="145.861" y="264.952" width="6.101" height="11.518" rx="1.777" transform="translate(355.901 41.333) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="2" x="133.541" y="269.224" width="6.101" height="11.518" rx="1.777" transform="translate(351.653 55.846) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="2" x="121.22" y="273.496" width="6.101" height="11.518" rx="1.777" transform="translate(347.405 70.359) rotate(70.877)"/>
+				<rect class="cls-10" x="78.328" y="278.949" width="14.026" height="27.609" rx="3.555" transform="translate(333.982 116.216) rotate(70.877)"/>
+				<rect class="cls-10" x="103.812" y="279.532" width="6.101" height="11.518" rx="1.777" transform="translate(341.403 90.865) rotate(70.877)"/>
+				<rect class="cls-3" x="102.636" y="310.69" width="8.475" height="20.774" transform="translate(375.221 114.917) rotate(70.877)"/>
+				<path class="cls-3" d="M34.952,343.882a2.222,2.222,0,0,1,1.371-2.827l34.665-12.026.774-.266,2.781,8.007-.773.266L39.1,349.06a2.222,2.222,0,0,1-2.827-1.371Z"/>
+				<path id="induct-3" data-induct-no="3" class="navigate-induct cls-9" d="M183.563,297.727l12.043-4.122c.575-.2.741-.4.741-1.4l.039-4.21a1.1,1.1,0,0,0-1.4-.68l-13.419,4.653-.079-.229a3.556,3.556,0,0,0-4.523-2.193l-60.57,21a3.554,3.554,0,0,0-2.194,4.523l2.145,6.188a3.554,3.554,0,0,0,4.523,2.194l60.571-21a3.555,3.555,0,0,0,2.194-4.522Z"/>
+				<rect class="navigate-induct cls-3" data-induct-no="3" x="170.502" y="292.197" width="6.101" height="11.518" rx="1.777" transform="translate(398.212 36.371) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="3" x="158.182" y="296.469" width="6.101" height="11.518" rx="1.777" transform="translate(393.964 50.884) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="3" x="145.861" y="300.741" width="6.101" height="11.518" rx="1.777" transform="translate(389.715 65.397) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="3" x="133.541" y="305.013" width="6.101" height="11.518" rx="1.777" transform="translate(385.467 79.911) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="3" x="121.22" y="309.285" width="6.101" height="11.518" rx="1.777" transform="translate(381.219 94.424) rotate(70.877)"/>
+				<rect class="cls-10" x="78.328" y="314.738" width="14.026" height="27.609" rx="3.555" transform="translate(367.796 140.281) rotate(70.877)"/>
+				<rect class="cls-10" x="103.812" y="315.321" width="6.101" height="11.518" rx="1.777" transform="translate(375.217 114.93) rotate(70.877)"/>
+				<rect class="cls-3" x="102.636" y="346.479" width="8.475" height="20.774" transform="translate(409.035 138.982) rotate(70.877)"/>
+				<path class="cls-3" d="M34.952,379.671a2.222,2.222,0,0,1,1.371-2.827l34.665-12.026.774-.266,2.781,8.007-.773.266L39.1,384.849a2.222,2.222,0,0,1-2.827-1.371Z"/>
+				<path id="induct-4" data-induct-no="4" class="navigate-induct cls-9" d="M183.563,333.516l12.043-4.122c.575-.2.741-.4.741-1.4l.039-4.21a1.1,1.1,0,0,0-1.4-.68l-13.419,4.653-.079-.229a3.556,3.556,0,0,0-4.523-2.193l-60.57,21a3.554,3.554,0,0,0-2.194,4.523l2.145,6.188a3.555,3.555,0,0,0,4.523,2.195l60.571-21a3.555,3.555,0,0,0,2.194-4.522Z"/>
+				<rect class="navigate-induct cls-3" data-induct-no="4" x="170.502" y="327.987" width="6.101" height="11.518" rx="1.777" transform="translate(432.026 60.436) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="4" x="158.182" y="332.258" width="6.101" height="11.518" rx="1.777" transform="translate(427.778 74.949) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="4" x="145.861" y="336.53" width="6.101" height="11.518" rx="1.777" transform="translate(423.53 89.462) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="4" x="133.541" y="340.802" width="6.101" height="11.518" rx="1.777" transform="translate(419.281 103.975) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="4" x="121.22" y="345.074" width="6.101" height="11.518" rx="1.777" transform="translate(415.033 118.488) rotate(70.877)"/>
+				<rect class="cls-10" x="78.328" y="350.527" width="14.026" height="27.609" rx="3.555" transform="translate(401.61 164.345) rotate(70.877)"/>
+				<rect class="cls-10" x="103.812" y="351.11" width="6.101" height="11.518" rx="1.777" transform="translate(409.031 138.994) rotate(70.877)"/>
+				<rect class="cls-3" x="102.636" y="382.268" width="8.475" height="20.774" transform="translate(442.849 163.047) rotate(70.877)"/>
+				<path class="cls-3" d="M34.952,415.46a2.221,2.221,0,0,1,1.371-2.826l34.665-12.027.774-.266,2.781,8.007-.773.267L39.1,420.638a2.22,2.22,0,0,1-2.827-1.371Z"/>
+				<path id="induct-5" data-induct-no="5" class="navigate-induct cls-9" d="M183.563,369.305l12.043-4.122c.575-.2.741-.4.741-1.4l.039-4.21a1.1,1.1,0,0,0-1.4-.68l-13.419,4.653-.079-.229a3.555,3.555,0,0,0-4.523-2.192l-60.57,21a3.554,3.554,0,0,0-2.194,4.523l2.145,6.189a3.555,3.555,0,0,0,4.523,2.194l60.571-21a3.555,3.555,0,0,0,2.194-4.522Z"/>
+				<rect class="navigate-induct cls-3" data-induct-no="5" x="170.502" y="363.776" width="6.101" height="11.518" rx="1.777" transform="translate(465.84 84.5) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="5" x="158.182" y="368.048" width="6.101" height="11.518" rx="1.777" transform="translate(461.592 99.014) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="5" x="145.861" y="372.32" width="6.101" height="11.518" rx="1.777" transform="translate(457.344 113.527) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="5" x="133.541" y="376.591" width="6.101" height="11.518" rx="1.777" transform="translate(453.096 128.04) rotate(70.877)"/>
+				<rect class="navigate-induct cls-3" data-induct-no="5" x="121.22" y="380.863" width="6.101" height="11.518" rx="1.777" transform="matrix(0.328, 0.945, -0.945, 0.328, 448.847, 142.553)"/>
+				<rect class="cls-10" x="78.328" y="386.316" width="14.026" height="27.609" rx="3.555" transform="translate(435.425 188.41) rotate(70.877)"/>
+				<rect class="cls-10" x="103.812" y="386.899" width="6.101" height="11.518" rx="1.777" transform="translate(442.845 163.059) rotate(70.877)"/>
+				<path id="switch-1" class="cls-11" d="M550.692,56.527a5.083,5.083,0,1,1,5.083-5.082A5.088,5.088,0,0,1,550.692,56.527Z"/>
+				<path d="M550.692,46.612a4.833,4.833,0,1,1-4.832,4.833,4.838,4.838,0,0,1,4.832-4.833m0-.5a5.333,5.333,0,1,0,5.332,5.333,5.333,5.333,0,0,0-5.332-5.333Z"/>
+				<g class="cls-12">
+				<line class="cls-13" x1="538.745" y1="59.931" x2="557.708" y2="40.968"/>
+				<line class="cls-13" x1="540.478" y1="61.664" x2="559.441" y2="42.7"/>
+				<line class="cls-13" x1="542.21" y1="63.396" x2="561.174" y2="44.433"/>
+				</g>
+				<path id="switch-2" class="cls-11" d="M90.394,54.269a5.083,5.083,0,1,1,5.083-5.082A5.088,5.088,0,0,1,90.394,54.269Z"/>
+				<path d="M90.4,44.354a4.833,4.833,0,1,1-4.833,4.832A4.838,4.838,0,0,1,90.4,44.354m0-.5a5.333,5.333,0,1,0,5.332,5.332A5.333,5.333,0,0,0,90.4,43.854Z"/>
+				<g class="cls-14">
+				<line class="cls-13" x1="78.447" y1="57.673" x2="97.411" y2="38.709"/>
+				<line class="cls-13" x1="80.18" y1="59.406" x2="99.143" y2="40.442"/>
+				<line class="cls-13" x1="81.912" y1="61.138" x2="100.876" y2="42.175"/>
+				</g>
+				<path id="switch-3" class="cls-11" d="M62.51,54.269a5.083,5.083,0,1,1,5.082-5.082A5.089,5.089,0,0,1,62.51,54.269Z"/>
+				<path d="M62.51,44.354a4.833,4.833,0,1,1-4.832,4.832,4.838,4.838,0,0,1,4.832-4.832m0-.5a5.333,5.333,0,1,0,5.333,5.332,5.332,5.332,0,0,0-5.333-5.332Z"/>
+				<g class="cls-15">
+				<line class="cls-13" x1="50.563" y1="57.673" x2="69.527" y2="38.709"/>
+				<line class="cls-13" x1="52.296" y1="59.406" x2="71.259" y2="40.442"/>
+				<line class="cls-13" x1="54.028" y1="61.138" x2="72.992" y2="42.175"/>
+				</g>
+				<path id="switch-4" class="cls-11" d="M25.333,79.823a5.082,5.082,0,1,1,5.082-5.082A5.088,5.088,0,0,1,25.333,79.823Z"/>
+				<path d="M25.333,69.909A4.832,4.832,0,1,1,20.5,74.741a4.838,4.838,0,0,1,4.833-4.832m0-.5a5.332,5.332,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-16">
+				<line class="cls-13" x1="13.385" y1="83.228" x2="32.349" y2="64.264"/>
+				<line class="cls-13" x1="15.118" y1="84.96" x2="34.081" y2="65.997"/>
+				<line class="cls-13" x1="16.85" y1="86.693" x2="35.814" y2="67.729"/>
+				</g>
+				<path id="switch-5" class="cls-11" d="M25.912,110.426A5.082,5.082,0,1,1,31,105.344,5.087,5.087,0,0,1,25.912,110.426Z"/>
+				<path d="M25.912,100.512a4.832,4.832,0,1,1-4.832,4.832,4.837,4.837,0,0,1,4.832-4.832m0-.5a5.332,5.332,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-17">
+				<line class="cls-13" x1="13.965" y1="113.831" x2="32.928" y2="94.867"/>
+				<line class="cls-13" x1="15.697" y1="115.563" x2="34.661" y2="96.6"/>
+				<line class="cls-13" x1="17.43" y1="117.296" x2="36.393" y2="98.332"/>
+				</g>
+				<path id="switch-6" class="cls-11" d="M63.162,116.454a5.082,5.082,0,1,1,5.082-5.082A5.088,5.088,0,0,1,63.162,116.454Z"/>
+				<path d="M63.162,106.54a4.832,4.832,0,1,1-4.832,4.832,4.837,4.837,0,0,1,4.832-4.832m0-.5a5.332,5.332,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-18">
+				<line class="cls-13" x1="51.214" y1="119.858" x2="70.178" y2="100.895"/>
+				<line class="cls-13" x1="52.947" y1="121.591" x2="71.911" y2="102.627"/>
+				<line class="cls-13" x1="54.68" y1="123.324" x2="73.643" y2="104.36"/>
+				</g>
+				<path id="switch-7" class="cls-11" d="M180.675,117.932a5.083,5.083,0,1,1,5.082-5.083A5.089,5.089,0,0,1,180.675,117.932Z"/>
+				<path d="M180.675,108.017a4.833,4.833,0,1,1-4.832,4.832,4.838,4.838,0,0,1,4.832-4.832m0-.5a5.333,5.333,0,1,0,5.333,5.332,5.332,5.332,0,0,0-5.333-5.332Z"/>
+				<g class="cls-19">
+				<line class="cls-13" x1="168.728" y1="121.336" x2="187.692" y2="102.372"/>
+				<line class="cls-13" x1="170.461" y1="123.068" x2="189.424" y2="104.105"/>
+				<line class="cls-13" x1="172.193" y1="124.801" x2="191.157" y2="105.837"/>
+				</g>
+				<path id="switch-13" class="cls-11" d="M220.165,138.913a5.082,5.082,0,1,1,5.083-5.082A5.088,5.088,0,0,1,220.165,138.913Z"/>
+				<path d="M220.165,129a4.832,4.832,0,1,1-4.832,4.832A4.837,4.837,0,0,1,220.165,129m0-.5a5.332,5.332,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-20">
+				<line class="cls-13" x1="208.217" y1="142.317" x2="227.181" y2="123.354"/>
+				<line class="cls-13" x1="209.95" y1="144.05" x2="228.914" y2="125.086"/>
+				<line class="cls-13" x1="211.683" y1="145.783" x2="230.646" y2="126.819"/>
+				</g>
+				<path id="switch-12" class="cls-11" d="M220.165,152.362a5.082,5.082,0,1,1,5.083-5.082A5.087,5.087,0,0,1,220.165,152.362Z"/>
+				<path d="M220.165,142.448a4.833,4.833,0,1,1-4.832,4.832,4.838,4.838,0,0,1,4.832-4.832m0-.5a5.333,5.333,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-21">
+				<line class="cls-13" x1="208.217" y1="155.767" x2="227.181" y2="136.803"/>
+				<line class="cls-13" x1="209.95" y1="157.499" x2="228.914" y2="138.536"/>
+				<line class="cls-13" x1="211.683" y1="159.232" x2="230.646" y2="140.268"/>
+				</g>
+				<path id="switch-11" class="cls-11" d="M220.165,165.812a5.082,5.082,0,1,1,5.083-5.082A5.088,5.088,0,0,1,220.165,165.812Z"/>
+				<path d="M220.165,155.9a4.833,4.833,0,1,1-4.832,4.833,4.838,4.838,0,0,1,4.832-4.833m0-.5a5.333,5.333,0,1,0,5.332,5.333,5.333,5.333,0,0,0-5.332-5.333Z"/>
+				<g class="cls-22">
+				<line class="cls-13" x1="208.217" y1="169.216" x2="227.181" y2="150.253"/>
+				<line class="cls-13" x1="209.95" y1="170.949" x2="228.914" y2="151.985"/>
+				<line class="cls-13" x1="211.683" y1="172.681" x2="230.646" y2="153.718"/>
+				</g>
+				<path id="switch-10" class="cls-11" d="M220.165,179.261a5.082,5.082,0,1,1,5.083-5.082A5.087,5.087,0,0,1,220.165,179.261Z"/>
+				<path d="M220.165,169.347a4.832,4.832,0,1,1-4.832,4.832,4.838,4.838,0,0,1,4.832-4.832m0-.5a5.332,5.332,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-23">
+				<line class="cls-13" x1="208.217" y1="182.666" x2="227.181" y2="163.702"/>
+				<line class="cls-13" x1="209.95" y1="184.398" x2="228.914" y2="165.435"/>
+				<line class="cls-13" x1="211.683" y1="186.131" x2="230.646" y2="167.167"/>
+				</g>
+				<path id="switch-8" class="cls-11" d="M190.238,170.032a5.082,5.082,0,1,1,5.083-5.082A5.087,5.087,0,0,1,190.238,170.032Z"/>
+				<path d="M190.238,160.118a4.832,4.832,0,1,1-4.832,4.832,4.837,4.837,0,0,1,4.832-4.832m0-.5a5.332,5.332,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-24">
+				<line class="cls-13" x1="178.291" y1="173.437" x2="197.254" y2="154.473"/>
+				<line class="cls-13" x1="180.023" y1="175.169" x2="198.987" y2="156.206"/>
+				<line class="cls-13" x1="181.756" y1="176.902" x2="200.719" y2="157.938"/>
+				</g>
+				<path id="switch-9" class="cls-11" d="M190.238,187.219a5.083,5.083,0,1,1,5.083-5.083A5.088,5.088,0,0,1,190.238,187.219Z"/>
+				<path d="M190.238,177.3a4.833,4.833,0,1,1-4.832,4.832,4.837,4.837,0,0,1,4.832-4.832m0-.5a5.333,5.333,0,1,0,5.332,5.332,5.332,5.332,0,0,0-5.332-5.332Z"/>
+				<g class="cls-25">
+				<line class="cls-13" x1="178.291" y1="190.623" x2="197.254" y2="171.659"/>
+				<line class="cls-13" x1="180.023" y1="192.355" x2="198.987" y2="173.392"/>
+				<line class="cls-13" x1="181.756" y1="194.088" x2="200.719" y2="175.125"/>
+				</g>
+				<rect class="cls-2" x="104.626" y="143.292" width="27.43" height="5.303" rx="1.777"/>
+				<polyline class="cls-26" points="130.409 144.187 132.493 144.187 134.841 146.536 137.209 144.168 137.209 148.145"/>
+				<path class="cls-2" d="M140.534,144.894a1,1,0,0,0-1.09.217l-1.706,1.705-1.686-1.685a1,1,0,0,0-.707-.293h-2.453a1.763,1.763,0,0,0-.195-.02H108.376a1.811,1.811,0,0,0-1.811,1.811v1.781a1.811,1.811,0,0,0,1.811,1.811H132.7a1.811,1.811,0,0,0,1.811-1.811v-1.572h.423l2.1,2.1a1,1,0,0,0,1.414,0l.706-.705v1.638a1,1,0,0,0,2,0v-4.052A1,1,0,0,0,140.534,144.894Z"/>
+			</svg>
+        </div>
+		<div class="col-lg-2"></div>
+    </div>
+    <div class="row m-0">
+        <div class="col-lg-12 pt-0 pb-0 pl-2 pr-2 mt-2">
+            <table class="table table-sm table-bordered" id="details_active_alarms_table">
+                <thead>
+                <tr>
+                    <th width="20%">Timestamp</th>
+                    <th width="10%">Duration</th>
+                    <th width="10%">Class</th>
+                    <th width="10%">Location</th>
+                    <th width="20%">Description</th>
+                    <th width="20%">Variable Name</th>
+                </tr>
+                </thead>
+                <tbody id="active_alarm_tbody">
+                    <tr>
+                        <td colspan="6">No active alarm to display</td>
+                    </tr>
+                </tbody>
+            </table>
+			<div class="row" id="marquee1">
+				<div class="col-lg-12">
+					<ul id="alarm-ticker"></ul>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+<%- include('footer', {currentMenu: 'general_view'}); %>
+<script src="js/jquery-bootstrap.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/jquery.newsTicker.js"></script>
+
+<script>
+let machine_mode = 9;
+let current_bin_status_list = {};
+async function loadDetailedActiveAlarmSettingsValue() {
+	detailed_active_alarm_settings_value = await ipcRenderer.invoke('getSingleStoreValue', 'ingram_detailed_active_alarm');
+
+	if(detailed_active_alarm_settings_value === "active") {
+		jQuery("#marquee1").hide();
+		jQuery("#marquee2").hide();
+		jQuery("#details_active_alarms_table").show();
+	} else {
+		jQuery("#details_active_alarms_table").hide();
+		jQuery("#marquee1").show();
+		jQuery("#marquee2").show();
+	}
+	//jQuery("#detailed_active_alarm_h1").text(detailed_active_alarm_settings_value);
+}
+
+function awNotice() {
+	var $active = $('#ticker1 a.active');
+	var $next = $active.next('a');    
+
+	if ($next.length){
+		$next.addClass('active');
+		$active.removeClass('active');
+	} else {
+		$active.removeClass('active');
+		$('#ticker1 a:first-of-type').addClass('active');
+	}
+}
+
+function awNotices(timer){
+    setInterval( "awNotice()", timer);
+}
+
+function awNotice2() {
+	var $active = $('#ticker2 a.active');
+	var $next = $active.next('a');    
+
+	if ($next.length){
+		$next.addClass('active');
+		$active.removeClass('active');
+	} else {
+		$active.removeClass('active');
+		$('#ticker2 a:first-of-type').addClass('active');
+	}
+}
+
+function awNotices2(timer){
+    setInterval( "awNotice2()", timer);
+}
+
+let alarm_class_to_names = {"0" : "Error", "1" : "Warning", "2" : "Message"};
+let detailed_active_alarm_settings_value = "";
+let old_tickers = [], new_tickers = [];
+var local_ip_address = getIPAddress();
+let inducts_current_status = {
+	"induct-1" : 99,
+	"induct-2" : 99,
+	"induct-3" : 99,
+	"induct-4" : 99,
+	"induct-5" : 99,
+	"induct-6" : 99,
+	"induct-7" : 99,
+};
+
+var inducts_gui_to_actual_id = {
+	1: {
+		"id": 7,
+		"name" : "Priority Pak Induct 5"
+	},
+	2: {
+		"id": 6,
+		"name" : "Priority Pak Induct 4"
+	},
+	3: {
+		"id": 5,
+		"name" : "Priority Pak Induct 3"
+	},
+	4: {
+		"id": 4,
+		"name" : "Priority Pak Induct 2"
+	},
+	5: {
+		"id": 3,
+		"name" : "Priority Pak Induct 1"
+	},
+	6: {
+		"id": 2,
+		"name" : "Tfold Induct 2"
+	},
+	7: {
+		"id": 1,
+		"name" : "Tfold Induct 1"
+	},
+};
+
+var alarm_ticker = $('#alarm-ticker').newsTicker({
+	row_height: 100,
+	max_rows: 2,
+	duration: 4000,
+	pauseOnHover: 0
+});
+
+jQuery(document).ready(function() {
+
+	loadDetailedActiveAlarmSettingsValue();
+	
+    jQuery("#ip_list_dropdown").change(function() {
+        selected_machine = jQuery(this).val();
+
+        if(selected_machine !== "") {
+            let selected_machine_name = machine_list[selected_machine];
+            jQuery("#display_machine_name").text(selected_machine_name);
+
+            setInterval(() => {
+                ipcRenderer.send("get:views", selected_machine, "general_view");
+            }, 1000);
+        } else {
+            jQuery("#display_machine_name").text("Select a machine");
+            selected_machine = 0;
+        }
+
+        ipcRenderer.send("get:views", selected_machine, "general_view");
+    });
+	
+	jQuery('.induct-control-btn').click(function(){ 
+		let clicked_induct_gui_id = jQuery(this).data('induct-gui-id');
+		let clicked_induct_gui_id_selector = "induct-" + clicked_induct_gui_id;
+		let induct_details = inducts_gui_to_actual_id[clicked_induct_gui_id];
+		let induct_actual_id = induct_details.id;
+		let induct_current_status = inducts_current_status[clicked_induct_gui_id_selector];
+		let induct_change_status = (induct_current_status == 0) ? 1 : 0;
+
+		ipcRenderer.send("get:change_induct", selected_machine, induct_change_status, induct_actual_id);
+	});
+
+	jQuery('.navigate-induct').click(function(){
+		var induct_gui_id = jQuery(this).data("induct-no");
+		var induct_details = inducts_gui_to_actual_id[induct_gui_id];
+		var induct_db_id = induct_details.id;
+		ipcRenderer.send("change:induct", induct_db_id);
+	});
+	
+
+	jQuery(".mod-sorter").click(function(){
+		var device_type = jQuery(this).data("device-type");
+		var sorter_number = jQuery(this).data("sorter-number");
+		console.log(device_type + " ==> " + sorter_number);
+		ipcRenderer.send("change:modsort", device_type, sorter_number, 1);
+	});
+});
+
+ipcRenderer.on("render:general_view", function(e, general_view_result) {
+    //BinEnabled=2=#27e22b, 
+	//BinPartiallyFull=3=blinking #4d80ff/ now #fff, 
+	//BinFull=5=#4d80ff, 
+	//BinDisabled with traymissing on=4=#6d6e70, 
+	//peblocked=7=#FFBF00/#FF4500, 
+	//manual_mode=8=#bababa, 
+	//BinDisabled with traymissing off/plain disabled=4=#d0d2d3/lighter gray
+	//Tray missing = 6
+    let bin_colors = {
+		"2" : "#27e22b", 
+		"3" : "#fff", 
+		"5" : "#4d80ff", 
+		"4" : "#6d6e70", 
+		"7" : "#FFBF00", 
+		"1" : "#27e22b", 
+		"8" : "#bababa",
+		"6" : "#d0d2d3"
+	};
+    let input_colors = {"0" : "#fff", "1" : "#f00"};
+    let conveyor_colors = { "0" : "#6d6e70",  "1" : "#27e22b", "2" : "#90EE90", "3" : "red"};
+	let induct_colors = { "0" : "black",  "1" : "red", "2" : "green", "3" : "orange"};
+    jQuery("#active_alarm_tbody").empty();
+
+    let bins_result = general_view_result['bins'];
+    let inputs_result = general_view_result['inputs'];
+    let alarms_result = general_view_result['alarms'];
+    let conveyors_result = general_view_result['conveyors'];
+	
+	let inducts_result = general_view_result['inducts'];
+	inducts_current_status = inducts_result;
+	//console.log(inducts_result);
+    
+	let estops_results = general_view_result['estops'];
+    machine_mode = general_view_result['mode'];
+	changeMachineNameBg(machine_mode);
+
+    for (let k in bins_result) {
+        
+        let related_bin_id = "#" + k;
+        let related_bin_status = bins_result[k];
+        
+        if(jQuery(related_bin_id).length > 0) {
+			current_bin_status_list[k] = related_bin_status;
+			if(related_bin_status == "3") {
+				jQuery(related_bin_id).removeClass("cls-11").removeClass("cls-blink").removeClass("cls-blink2").addClass("cls-blink");
+			} else if(related_bin_status == "7") {
+				jQuery(related_bin_id).removeClass("cls-11").removeClass("cls-blink").removeClass("cls-blink2").addClass("cls-blink2");
+			} else {
+				let related_bin_color = bin_colors[related_bin_status];
+				jQuery(related_bin_id).removeClass("cls-11").removeClass("cls-blink").removeClass("cls-blink2").css("fill", related_bin_color);
+			}
+        }
+    }
+
+    for (let k in conveyors_result) {
+        let related_conveyor_class = "#" + k;
+        let related_conveyor_status = conveyors_result[k];
+        
+        if(jQuery(related_conveyor_class).length > 0) {
+			jQuery( related_conveyor_class ).each(function( index ) {
+				for(var conv = 0; conv < 4; conv++ ) {
+					if(related_conveyor_status == conv) {
+						jQuery(this).addClass("cls-conveyor-" + conv);
+					} else {
+						jQuery(this).removeClass("cls-conveyor-" + conv);
+					}
+				}
+			});
+        }
+    }
+
+	for (let k in inducts_result) {
+		let related_induct_status = inducts_result[k];
+        let related_induct_class = "#" + k;
+		let related_induct_btn_class = related_induct_class + "-btn";
+		let related_induct_btn_text = jQuery(related_induct_btn_class).text();
+        
+        if(jQuery(related_induct_class).length > 0) {
+			let related_induct_btn_new_text = related_induct_btn_text;
+			let related_induct_btn_add_class = "btn-outline-danger";
+			let related_induct_btn_remove_class = "btn-outline-success";
+			if(related_induct_status == 0) {
+				related_induct_btn_new_text = related_induct_btn_new_text.replace("Disable", "Enable");
+				related_induct_btn_add_class = "btn-outline-success";
+				related_induct_btn_remove_class = "btn-outline-danger";
+			} else {
+				related_induct_btn_new_text = related_induct_btn_new_text.replace("Enable", "Disable");
+			}
+
+			jQuery(related_induct_btn_class).text(related_induct_btn_new_text).addClass(related_induct_btn_add_class).removeClass(related_induct_btn_remove_class);
+			
+			jQuery( related_induct_class ).each(function( index ) {
+				for(var ind = 0; ind < 4; ind++ ) {
+					if(related_induct_status == ind) {
+						jQuery(this).addClass("cls-induct-" + ind);
+					} else {
+						jQuery(this).removeClass("cls-induct-" + ind);
+					}
+				}
+			});
+        }
+    }
+    
+    for (let k in inputs_result) {
+        let related_input_id = "#" + k;
+        let related_input_status = inputs_result[k];
+        
+        if(jQuery(related_input_id).length > 0) {
+            let related_input_color = input_colors[related_input_status];
+            jQuery(related_input_id).css("fill", related_input_color);
+        }
+    }
+
+	jQuery(".general-estops" ).each(function( index ) {
+		if(jQuery(this).is(":visible")) jQuery(this).hide();
+	});
+
+	if(!jQuery.isEmptyObject(estops_results)) {
+        //console.log("entered here");
+        for (let k in estops_results) {
+            let related_estop_id = "#" + estops_results[k];
+            let related_estop_gid = "#" + estops_results[k] + "g";
+            if((jQuery(related_estop_gid).length > 0) && (jQuery(related_estop_id).length > 0)) {
+				jQuery(related_estop_gid).show();
+                jQuery(related_estop_id).css("fill", "#ff0");
+            }
+        }
+    }
+
+    if(!jQuery.isEmptyObject(alarms_result)) {
+		new_tickers = [];
+		let alarm_count = 0;
+        for (let k in alarms_result) {
+			alarm_count++;
+            let related_alarm_gui_id = k;
+            let related_alarm_info = alarms_result[k];
+            
+            let alarm_type = related_alarm_info['alarm_type'], 
+            alarm_description = related_alarm_info['description'], 
+            alarm_class = related_alarm_info['alarm_class'], 
+            alarm_location = related_alarm_info['location'], 
+            variable_name = related_alarm_info['variable_name'], 
+            timestamp = related_alarm_info['timestamp'],
+            duration = related_alarm_info['duration'];
+            
+            timestamp = timeConverter(timestamp);
+            
+            let tr_html = '<tr>' + 
+                '<td>' + timestamp + '</td>'+
+                '<td>' + secondsToDhms(duration) + '</td>'+
+                '<td>' + alarm_class_to_names[alarm_class] + '</td>'+
+                '<td>' + alarm_location + '</td>'+
+                '<td>' + alarm_description + '</td>'+
+                '<td>' + variable_name + '</td>'+
+                '</tr>';
+
+            jQuery("#active_alarm_tbody").append(tr_html);
+			new_tickers.push(alarm_description);
+        }
+
+		if(new_tickers.sort().join(',') !== old_tickers.sort().join(',')) {
+			old_tickers = [...new_tickers];
+
+			alarm_ticker.newsTicker('pause');
+            alarm_ticker.newsTicker('remove');
+			var num = new_tickers.length;
+			if(num == 1) alarm_ticker.newsTicker('add', new_tickers[0], "single-ticker")
+			else new_tickers.forEach(elem => alarm_ticker.newsTicker('add', elem, ""));
+			(num > 2) && alarm_ticker.newsTicker('unpause');
+		}
+    } else {
+        let tr_html = '<tr><td colspan="6">No active alarm to display</td></tr>';
+        jQuery("#active_alarm_tbody").append(tr_html);
+		old_tickers = [];
+		alarm_ticker.newsTicker('pause');
+        alarm_ticker.newsTicker('remove');
+    }
+});
+</script>
+</body>
+</html>
