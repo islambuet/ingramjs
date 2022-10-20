@@ -173,3 +173,11 @@ div.dt-buttons {
 #warning-alert {
     display: none;
 }
+/*shaiful*/
+.tooltip-inner{
+    max-width: 300px;
+    background-color: darkgreen;
+}
+.bs-tooltip-top .arrow::before{
+    border-top-color: darkgreen;
+}
