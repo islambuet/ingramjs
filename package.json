@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "author": "Bari Hossain",
+  "author": "Shaiful Islam",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.5.0",
