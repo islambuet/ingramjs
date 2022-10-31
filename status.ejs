@@ -393,7 +393,7 @@
                     <title class="device-title-0">Main PLC</title>
                 </path>
                 <polygon class="cls-11 device-0" data-toggle="tooltip" title="Main PLC" points="126.011 147.106 139.072 147.106 139.072 140.581 126.011 147.106">
-                    <title class="device-title-0">Main PLC</title>
+                    <title class="device-title-0"></title>
                 </polygon>
                 <path id="estop-99" data-toggle="tooltip" data-html="true" title="Estop Loop Open<br>E-STOP_LOOP_CLOSED" class="cls-14" d="M108.363,137.773v10.864h10.865V137.773Zm5.432,9.054a3.622,3.622,0,1,1,3.622-3.622A3.622,3.622,0,0,1,113.8,146.827Z">
                     <title class="estop-title-99"></title>
@@ -462,18 +462,19 @@ ipcRenderer.on("render:device_titles", function(e, titles_result) {
 	console.log(titles_result);
 	let devices_titles = titles_result['devices'];
 	let estops_titles = titles_result['estops'];
-	
-	for (let k in devices_titles) {
-        let related_device_title_id = ".device-title-" + k;
-		let related_device_title_text = devices_titles[k];
-		jQuery(related_device_title_id).text(related_device_title_text);
-	}
 
-	for (let k in estops_titles) {
-        let related_estop_title_id = ".estop-title-" + k;
-		let related_estop_title_text = estops_titles[k];
-		jQuery(related_estop_title_id).text(related_estop_title_text);
-	}
+	//TODO Shaiful Replace following commented lines with dynamic tool tip
+	// for (let k in devices_titles) {
+    //     let related_device_title_id = ".device-title-" + k;
+	// 	let related_device_title_text = devices_titles[k];
+	// 	jQuery(related_device_title_id).text(related_device_title_text+"Shaiful");
+	// }
+
+	// for (let k in estops_titles) {
+    //     let related_estop_title_id = ".estop-title-" + k;
+	// 	let related_estop_title_text = estops_titles[k];
+	// 	jQuery(related_estop_title_id).text(related_estop_title_text+"shaiful");
+	// }
 });
 
 ipcRenderer.on("render:status", function(e, status_result) {
