@@ -235,7 +235,13 @@ function processReceivedJsonObjects(jsonObjects) {
 				let packageListResult = jsonObj.result;
 				//console.log(deviceTitlesResult);
 				mainWindow.webContents.send("render:package_list", packageListResult);
-			} else if(resType == "sorted_graphs") {
+			}
+			else if(resType == "statistics-package-to-sort") {
+				let ingramProducts = jsonObj.ingramProducts;
+				console.log(ingramProducts);
+				mainWindow.webContents.send("render:statistics-package-to-sort", ingramProducts);
+			}
+			else if(resType == "sorted_graphs") {
 				let sortedGraphResult = jsonObj.result;
 				//console.log(deviceTitlesResult);
 				mainWindow.webContents.send("render:sorted_graphs", sortedGraphResult);
@@ -406,6 +412,7 @@ ipcMain.on("get:filtered_package_list", function(e, machineId, start_timestamp, 
 		sendMessageToServer(JSON.stringify(m));
 	}
 });
+
 
 ipcMain.on("get:filtered_alarm_history", function(e, machineId, start_timestamp, end_timestamp) {
 	currentConnectedMachine = machineId;
