@@ -238,7 +238,7 @@ function processReceivedJsonObjects(jsonObjects) {
 			}
 			else if(resType == "statistics-package-to-sort") {
 				let ingramProducts = jsonObj.ingramProducts;
-				console.log(ingramProducts);
+				//console.log(ingramProducts);
 				mainWindow.webContents.send("render:statistics-package-to-sort", ingramProducts);
 			}
 			else if(resType == "sorted_graphs") {

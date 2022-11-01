@@ -65,7 +65,7 @@
 
             }
             ipcRenderer.send("get:views", selected_machine, "statistics-package-to-sort");
-            jQuery("#head-loader").html('Packages <img src="./resources/loading.gif">');
+            jQuery("#head-loader").html('Package To Sort <img src="./resources/loading.gif">');
         });
 
         data_table = jQuery('#alarm_table').DataTable({
@@ -76,7 +76,8 @@
                     extend: 'csv',
                     fieldSeparator: ";",
                     text: 'Export'
-                }],
+                },
+            ],
             "columns": [
                 null,
                 null,
@@ -87,8 +88,14 @@
     });
 
     ipcRenderer.on("render:statistics-package-to-sort", function(e, ingramProducts) {
-        console.log(ingramProducts)
-        jQuery("#head-loader").html('Packages');
+        jQuery("#head-loader").html('Package To Sort');
+        for (let index in ingramProducts) {
+            data_table.row.add( [
+                ingramProducts[index]['carton_id'],
+                ingramProducts[index]['dest1'],
+                ingramProducts[index]['dest2']
+            ] ).draw( false );
+        }
     });
 </script>
 </body>
