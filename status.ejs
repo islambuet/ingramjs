@@ -315,8 +315,8 @@
                 <polygon class="cls-11 device-3" data-toggle="tooltip" title="Drive Gap 3" points="212.179 137.536 225.24 137.536 225.24 131.012 212.179 137.536">
                     <title class="device-title-3"></title>
                 </polygon>
-                <path style="fill:white;" class="cls-11" d="M41,19.194v5.674H28.837V19.194H41m.448-.448H28.389v6.57H41.45v-6.57Z"/>
-                <polygon style="fill:white;" class="cls-11" points="28.389 25.271 41.45 25.271 41.45 18.746 28.389 25.271"/>
+                <path data-toggle="tooltip" title="Ingram" class="cls-11 device-ingram" d="M41,19.194v5.674H28.837V19.194H41m.448-.448H28.389v6.57H41.45v-6.57Z"/>
+                <polygon data-toggle="tooltip" title="Ingram" class="cls-11 device-ingram" points="28.389 25.271 41.45 25.271 41.45 18.746 28.389 25.271"/>
                 <path class="cls-11 device-5" data-toggle="tooltip" title="Drive Gap 1" d="M224.792,150.622V156.3H212.627v-5.674h12.165m.448-.448H212.179v6.57H225.24v-6.57Z">
                     <title class="device-title-5"></title>
                 </path>
@@ -506,7 +506,6 @@ ipcRenderer.on("render:status", function(e, status_result) {
             } else {
                 related_device_color = device_colors[related_device_status];
             }
-            
             jQuery(related_device_class).css("fill", related_device_color);
         }
     }
