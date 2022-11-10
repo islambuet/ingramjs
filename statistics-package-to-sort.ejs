@@ -5,6 +5,14 @@
         <h2 id="head-loader">Package To Sort</h2>
     </div>
 </div>
+<div class="row m-0 mt-2">
+        <div class="col-md-4 pr-0">
+            <input type="text" id="carton_id" class="form-control"  placeholder="Carton Id">
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" id="btn_search">Search</button>
+        </div>
+</div>
 
 <div class="row m-0 mt-2">
     <div class="col-lg-12 pt-0 pb-0 pl-2 pr-2">
@@ -62,12 +70,14 @@
             } else {
                 jQuery("#display_machine_name").text("Select a machine");
                 selected_machine = 0;
-
             }
-            ipcRenderer.send("get:views", selected_machine, "statistics-package-to-sort");
+
+        });
+        jQuery("#btn_search").click(function() {
+            let cartonId=$('#carton_id').val();
+            ipcRenderer.send("get:filtered_package_to_sort_list", selected_machine, cartonId);
             jQuery("#head-loader").html('Package To Sort <img src="./resources/loading.gif">');
         });
-
         data_table = jQuery('#alarm_table').DataTable({
             dom: 'Bifrtp',
             "paging":false,
@@ -89,6 +99,8 @@
 
     ipcRenderer.on("render:statistics-package-to-sort", function(e, ingramProducts) {
         jQuery("#head-loader").html('Package To Sort');
+        //console.log(ingramProducts);
+        data_table.clear().draw( false );
         for (let index in ingramProducts) {
             data_table.row.add( [
                 ingramProducts[index]['carton_id'],

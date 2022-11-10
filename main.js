@@ -412,6 +412,15 @@ ipcMain.on("get:filtered_package_list", function(e, machineId, start_timestamp, 
 		sendMessageToServer(JSON.stringify(m));
 	}
 });
+ipcMain.on("get:filtered_package_to_sort_list", function(e, machineId, cartonId) {
+	currentConnectedMachine = machineId;
+	//console.log(machineId+" "+cartonId)
+	//if((machineId != 0) && (cartonId !== "")) {
+	if((machineId != 0) ) {
+		let m = {"req" : "filtered_package_to_sort_list", "id" : machineId, "cartonId" : cartonId};
+		sendMessageToServer(JSON.stringify(m));
+	}
+});
 
 
 ipcMain.on("get:filtered_alarm_history", function(e, machineId, start_timestamp, end_timestamp) {
