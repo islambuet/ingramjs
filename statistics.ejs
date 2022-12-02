@@ -288,7 +288,7 @@ let pie_chart = Highcharts.chart('pie-chart', {
         enabled: false
     },
     title: {
-        text: '%'
+        text: 'Total Products: 0'
     },
     tooltip: {
         pointFormat: '<b>{point.percentage:.1f}%</b>'
@@ -343,7 +343,7 @@ ipcRenderer.on("render:statistics", function(e, data_result) {
     changeMachineNameBg(machine_mode);
     //console.log("Mode: ", machine_mode);
 
-    //console.log(data_result);
+    console.log(data_result);
     let alarms_result = data_result['alarms'];
     let statistics_result = data_result['statistics'];
     //console.log(statistics_result);
@@ -426,7 +426,6 @@ ipcRenderer.on("render:statistics", function(e, data_result) {
             highest_sc = k;
         }
     }
-
     for (let k in sorting_codes) {
         let sc_percentage = 0;
         if(reasons_result[k] !== undefined) {
@@ -451,6 +450,7 @@ ipcRenderer.on("render:statistics", function(e, data_result) {
 
     //console.log(pie_chart_data);
     pie_chart.series[0].setData(pie_chart_data, true);
+    pie_chart.setTitle({text:"Total Products: "+total_products_count})
     jQuery("#pie-chart .highcharts-legend-item").each(function(i, e) {
         jQuery(this).mouseover(function() {
             let current_sc = jQuery(this).text();
