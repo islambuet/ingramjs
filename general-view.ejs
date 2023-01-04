@@ -523,28 +523,9 @@
         </div>
     </div>
 	<div class="row m-0 mt-1 general-bin" style="display: none;">
-		<div class="col-12 mb-1 p-1" style="border: 1px solid black;min-height: 100px;">
-			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
-				66
-			</div>
-			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
-				66
-			</div>
-			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
-				66
-			</div>
-			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
-				66
-			</div>
-
-
-		</div>
-		<div class="col-12 mb-1" style="border: 1px solid black;min-height: 100px;">
-			shaiful
-		</div>
-		<div class="col-12 mb-1" style="border: 1px solid black;min-height: 100px;">
-			shaiful
-		</div>
+		<div id="binLine1Container" class="col-12 mb-1 p-1" style="border: 1px solid black;min-height: 100px;"></div>
+		<div id="binLine2Container" class="col-12 mb-1 p-1" style="border: 1px solid black;min-height: 100px;"></div>
+		<div id="binLine3Container" class="col-12 mb-1 p-1" style="border: 1px solid black;min-height: 100px;"></div>
 	</div>
 </div>
 <%- include('footer', {currentMenu: 'general_view'}); %>
@@ -754,12 +735,14 @@ ipcRenderer.on("render:general_view", function(e, general_view_result) {
 	let estops_results = general_view_result['estops'];
     machine_mode = general_view_result['mode'];
 	changeMachineNameBg(machine_mode);
-
+	let binLine1=[];
+	let binLine2=[];
+	let binLine3=[];
     for (let k in bins_result) {
-        
+		let related_bin_number = k.substring(4);
         let related_bin_id = "#" + k;
         let related_bin_status = bins_result[k];
-
+        //console.log(related_bin_number,k,related_bin_id,related_bin_status)
         if(jQuery(related_bin_id).length > 0) {
 			current_bin_status_list[k] = related_bin_status;
 			if(related_bin_status == "3") {
@@ -770,9 +753,43 @@ ipcRenderer.on("render:general_view", function(e, general_view_result) {
 				let related_bin_color = bin_colors[related_bin_status];
 				jQuery(related_bin_id).removeClass("cls-11").removeClass("cls-blink").removeClass("cls-blink2").css("fill", related_bin_color);
 			}
+
+			if(related_bin_status==5){
+				binLine1.push(related_bin_number)
+			}
+			else if(related_bin_status==7){
+				binLine2.push(related_bin_number)
+			}
+			else if(related_bin_status==4){
+				binLine3.push(related_bin_number)
+			}
         }
     }
+	// <div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
+	// 	66
+	// </div>
+	//bin view start
+	binLine1.sort(function(a, b){return a - b});
+	binLine2.sort(function(a, b){return a - b});
+	binLine3.sort(function(a, b){return a - b});
+	let binWidth=100;
+	let binLineHtml="";
+	for(let i=0;i<binLine1.length;i++){
+		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[5]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine1[i]+'</div>';
+	}
+	$("#binLine1Container").html(binLineHtml)
+	binLineHtml='';
+	for(let i=0;i<binLine2.length;i++){
+		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[7]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine2[i]+'</div>';
+	}
+	$("#binLine2Container").html(binLineHtml)
+	binLineHtml='';
+	for(let i=0;i<binLine3.length;i++){
+		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[4]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine3[i]+'</div>';
+	}
+	$("#binLine3Container").html(binLineHtml)
 
+	//bin view end
     for (let k in conveyors_result) {
         let related_conveyor_class = "#" + k;
         let related_conveyor_status = conveyors_result[k];
