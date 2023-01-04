@@ -1,5 +1,5 @@
 <%- include('header', {currentMenu: 'general-view', pageTitle: 'General View'}); %>
-    <div class="row m-0 mt-1">
+    <div class="row m-0 mt-1 general-classic" style="display: none;">
 		<div class="col-lg-2" style="padding-top: 305px;">
 			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-1-btn" data-induct-gui-id="1">Disable Priorty Pak-5</button>
 			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-2-btn" data-induct-gui-id="2">Disable Priorty Pak-4</button>
@@ -496,7 +496,7 @@
         </div>
 		<div class="col-lg-2"></div>
     </div>
-    <div class="row m-0">
+    <div class="row m-0 general-classic" style="display: none;">>
         <div class="col-lg-12 pt-0 pb-0 pl-2 pr-2 mt-2">
             <table class="table table-sm table-bordered" id="details_active_alarms_table">
                 <thead>
@@ -522,6 +522,30 @@
 			</div>
         </div>
     </div>
+	<div class="row m-0 mt-1 general-bin" style="display: none;">
+		<div class="col-12 mb-1 p-1" style="border: 1px solid black;min-height: 100px;">
+			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
+				66
+			</div>
+			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
+				66
+			</div>
+			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
+				66
+			</div>
+			<div class="float-left m-1 text-center" style="width: 100px;height: 100px;line-height: 100px;background-color: red;vertical-align: middle;font-size: 50px;">
+				66
+			</div>
+
+
+		</div>
+		<div class="col-12 mb-1" style="border: 1px solid black;min-height: 100px;">
+			shaiful
+		</div>
+		<div class="col-12 mb-1" style="border: 1px solid black;min-height: 100px;">
+			shaiful
+		</div>
+	</div>
 </div>
 <%- include('footer', {currentMenu: 'general_view'}); %>
 <script src="js/jquery-bootstrap.js"></script>
@@ -631,8 +655,21 @@ var alarm_ticker = $('#alarm-ticker').newsTicker({
 	duration: 4000,
 	pauseOnHover: 0
 });
-
+async function loadDefaultView() {
+	let ingram_default_general_view_name = await ipcRenderer.invoke('getSingleStoreValue','ingram_default_general_view_name');
+	if(ingram_default_general_view_name=='bin'){
+		$('.general-bin').show();
+		$('.general-classic').hide();
+	}
+	else{
+		console.log("else")
+		$('.general-bin').hide();
+		$('.general-classic').show();
+	}
+}
 jQuery(document).ready(function() {
+	loadDefaultView();
+
 	$('[data-toggle="tooltip"]').tooltip();
 	loadDetailedActiveAlarmSettingsValue();
 	
@@ -722,7 +759,7 @@ ipcRenderer.on("render:general_view", function(e, general_view_result) {
         
         let related_bin_id = "#" + k;
         let related_bin_status = bins_result[k];
-        
+
         if(jQuery(related_bin_id).length > 0) {
 			current_bin_status_list[k] = related_bin_status;
 			if(related_bin_status == "3") {

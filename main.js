@@ -481,7 +481,7 @@ ipcMain.on("settings:saved", function(e, settings_data) {
 	} else {
 		store.set("ingram_detailed_active_alarm", "not_set");
 	}
-	
+	store.set("ingram_default_general_view_name", settings_data['default_general_view_name']);
 	//store.set("host", settings_data.ip_address_input);
 });
 
@@ -511,9 +511,17 @@ ipcMain.handle('getStoreValue', (e) => {
 	let diagonstic_url = store.get("ingram_diagonstic_url", "not_set");
 	let cm_address = store.get("ingram_cm_address", "not_set");
 	let detailed_active_alarm = store.get("ingram_detailed_active_alarm", "not_set");
+	let default_general_view_name = store.get("ingram_default_general_view_name", "not_set");
 	//store.set("host", settings_data.ip_address_input);
 
-	return {"ip_address_input" : server_address, "port_input" : server_port, "diagonstic_url" : diagonstic_url, "cm_ip_address_input" : cm_address, "detailed_active_alarm" : detailed_active_alarm};
+	return {
+		"ip_address_input" : server_address,
+		"port_input" : server_port,
+		"diagonstic_url" : diagonstic_url,
+		"cm_ip_address_input" : cm_address,
+		"detailed_active_alarm" : detailed_active_alarm,
+		"default_general_view_name" : default_general_view_name
+	};
 });
 
 ipcMain.handle('getSingleStoreValue', (event, key) => {
