@@ -772,17 +772,19 @@ ipcRenderer.on("render:general_view", function(e, general_view_result) {
 	binLine1.sort(function(a, b){return a - b});
 	binLine2.sort(function(a, b){return a - b});
 	binLine3.sort(function(a, b){return a - b});
-	let binWidth=100;
+	let binWidth=binLine1.length>5?111:230;
 	let binLineHtml="";
 	for(let i=0;i<binLine1.length;i++){
 		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[5]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine1[i]+'</div>';
 	}
 	$("#binLine1Container").html(binLineHtml)
+	binWidth=binLine2.length>5?111:230;
 	binLineHtml='';
 	for(let i=0;i<binLine2.length;i++){
 		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[6]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine2[i]+'</div>';
 	}
 	$("#binLine2Container").html(binLineHtml)
+	binWidth=binLine3.length>5?111:230;
 	binLineHtml='';
 	for(let i=0;i<binLine3.length;i++){
 		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[7]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine3[i]+'</div>';
