@@ -757,10 +757,10 @@ ipcRenderer.on("render:general_view", function(e, general_view_result) {
 			if(related_bin_status==5){
 				binLine1.push(related_bin_number)
 			}
-			else if(related_bin_status==7){
+			else if(related_bin_status==6){
 				binLine2.push(related_bin_number)
 			}
-			else if(related_bin_status==4){
+			else if(related_bin_status==7){
 				binLine3.push(related_bin_number)
 			}
         }
@@ -780,12 +780,12 @@ ipcRenderer.on("render:general_view", function(e, general_view_result) {
 	$("#binLine1Container").html(binLineHtml)
 	binLineHtml='';
 	for(let i=0;i<binLine2.length;i++){
-		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[7]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine2[i]+'</div>';
+		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[6]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine2[i]+'</div>';
 	}
 	$("#binLine2Container").html(binLineHtml)
 	binLineHtml='';
 	for(let i=0;i<binLine3.length;i++){
-		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[4]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine3[i]+'</div>';
+		binLineHtml+='<div class="float-left m-1 text-center" style="width: '+binWidth+'px;height: '+binWidth+'px;line-height: '+binWidth+'px;background-color: '+bin_colors[7]+';vertical-align: middle;font-size: '+(binWidth/2)+'px;">'+binLine3[i]+'</div>';
 	}
 	$("#binLine3Container").html(binLineHtml)
 
