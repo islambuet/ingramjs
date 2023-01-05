@@ -219,10 +219,10 @@ ipcRenderer.on("link:changed", function(e, ip_list_html, machine_list_from_serve
         jQuery("#display_machine_name").text("Select a machine");
     }
 });
-ipcRenderer.on("CM_MESSAGE:4", function(e, activeAlarms) {
+ipcRenderer.on("status:ActiveAlarms", function(e,machineId, activeAlarms) {
     //assuming machineId=1 alarm_id=1 alarm_type =0 for estop
-    console.log("Got CM_MESSAGE:4 Event")
-    if(activeAlarms['110']){
+    //console.log("status:ActiveAlarms");
+    if(activeAlarms[machineId+'10']){
         $('#estop_loop_open').show();
     }
     else{

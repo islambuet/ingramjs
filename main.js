@@ -101,6 +101,7 @@ app.on('ready', function() {
 let previouslyConnected = 0;
 let alreadyConnected = 0;
 let currentConnectedMachine = 0;
+let currentViewName = '';
 /* const port = 10707;
 const host = "192.168.1.102"; */
 let port = store.get("ingram_server_port", "not_set");
@@ -269,13 +270,11 @@ function processReceivedJsonObjects(jsonObjects) {
 				//console.log(deviceTitlesResult);
 				mainWindow.webContents.send("render:login_result", loginResult);
 			}
-			else if(resType == "CM_MESSAGE") {
+			//messageId==4
+			else if(resType == "status:ActiveAlarms") {
 				let  machineId=jsonObj.machineId;
-				let  messageId=jsonObj.messageId;
-				if(messageId==4){
-					let activeAlarms=jsonObj.activeAlarms;
-					mainWindow.webContents.send("CM_MESSAGE:4", activeAlarms);
-				}
+				let activeAlarms=jsonObj.activeAlarms;
+				mainWindow.webContents.send("status:ActiveAlarms",machineId, activeAlarms);
 			}
 			
 		}
@@ -357,10 +356,17 @@ ipcMain.on("connect:server", function(e) {
 });
 
 ipcMain.on("get:views", function(e, machineId, view_name) {
+
 	currentConnectedMachine = machineId;
 	if((machineId != 0) && (view_name != "diagonstics")) {
 		let m = {"req" : view_name, "id" : machineId};
 		sendMessageToServer(JSON.stringify(m));
+		if(currentViewName!=view_name){
+			//get status of active alrams for estop alarm once
+			currentViewName=view_name;
+			let m = {"req" : 'status:ActiveAlarms', "machineId" : machineId};
+			sendMessageToServer(JSON.stringify(m));
+		}
 	}
 });
 
