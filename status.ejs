@@ -459,7 +459,7 @@ jQuery(document).ready(function() {
 });
 
 ipcRenderer.on("render:device_titles", function(e, titles_result) {
-	console.log(titles_result);
+	//console.log(titles_result);
 	let devices_titles = titles_result['devices'];
 	let estops_titles = titles_result['estops'];
 
@@ -486,7 +486,7 @@ ipcRenderer.on("render:status", function(e, status_result) {
     let scanner_colors = {"0" : "#f00", "1" : "#808184"};
     let device_colors = {"0" : "#f00", "1" : "#231f20"};
 
-    console.log(status_result);
+    //console.log(status_result);
     let alarms_result = status_result['alarms'];
     let devices_result = status_result['devices'];
     let estops_results = status_result['estops'];

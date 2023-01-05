@@ -249,7 +249,8 @@ function processReceivedJsonObjects(jsonObjects) {
 				let settingResult = jsonObj.result;
 				//console.log(deviceTitlesResult);
 				mainWindow.webContents.send("render:settings", settingResult);
-			}   else if(resType == "login_user") {
+			}
+			else if(resType == "login_user") {
 				let loginResult = jsonObj.result;
 
 				if(loginResult['success'] === 1) {
@@ -267,6 +268,14 @@ function processReceivedJsonObjects(jsonObjects) {
 
 				//console.log(deviceTitlesResult);
 				mainWindow.webContents.send("render:login_result", loginResult);
+			}
+			else if(resType == "CM_MESSAGE") {
+				let  machineId=jsonObj.machineId;
+				let  messageId=jsonObj.messageId;
+				if(messageId==4){
+					let activeAlarms=jsonObj.activeAlarms;
+					mainWindow.webContents.send("CM_MESSAGE:4", activeAlarms);
+				}
 			}
 			
 		}
