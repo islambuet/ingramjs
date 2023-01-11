@@ -137,7 +137,7 @@ jQuery(document).ready(function() {
             selected_machine = 0;
             jQuery("#display_machine_name").text("Select a machine");
         }
-
+        ipcRenderer.send("status:ActiveAlarms", selected_machine);
         ipcRenderer.send("get:views", selected_machine, "settings");
     });
 

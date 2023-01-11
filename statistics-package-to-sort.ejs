@@ -71,7 +71,7 @@
                 jQuery("#display_machine_name").text("Select a machine");
                 selected_machine = 0;
             }
-
+            ipcRenderer.send("status:ActiveAlarms", selected_machine);
         });
         jQuery("#btn_search").click(function() {
             let cartonId=$('#carton_id').val();

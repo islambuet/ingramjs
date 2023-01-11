@@ -248,7 +248,7 @@ jQuery(document).ready(function() {
         for (let k in sorting_codes) {
             jQuery("#filter_sorting_code").append('<option value="' + k + '">' + k + '</option>');
         }
-
+        ipcRenderer.send("status:ActiveAlarms", selected_machine);
         ipcRenderer.send("get:views", selected_machine, "package_list");
         jQuery("#head-loader").html('Packages <img src="./resources/loading.gif">');
     });

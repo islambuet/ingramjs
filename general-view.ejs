@@ -659,7 +659,6 @@ jQuery(document).ready(function() {
         if(selected_machine !== "") {
             let selected_machine_name = machine_list[selected_machine];
             jQuery("#display_machine_name").text(selected_machine_name);
-
             setInterval(() => {
                 ipcRenderer.send("get:views", selected_machine, "general_view");
             }, 1000);
@@ -667,7 +666,7 @@ jQuery(document).ready(function() {
             jQuery("#display_machine_name").text("Select a machine");
             selected_machine = 0;
         }
-
+		ipcRenderer.send("status:ActiveAlarms", selected_machine);
         ipcRenderer.send("get:views", selected_machine, "general_view");
     });
 	
