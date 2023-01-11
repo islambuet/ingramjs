@@ -448,14 +448,8 @@ ipcMain.on("get:filtered_alarm_hit_list", function(e, machineId, start_timestamp
 });
 
 ipcMain.on("change:link", function(e, link) {
-	//console.log(link);
 	let linkFile = link + ".ejs";
-	mainWindow.loadFile(linkFile).then(function (){
-		if(currentConnectedMachine>0){
-			let m = {"req" : 'status:ActiveAlarms', "machineId" : currentConnectedMachine};
-			sendMessageToServer(JSON.stringify(m));
-		}
-	});
+	mainWindow.loadFile(linkFile);
 });
 
 ipcMain.on("change:modsort", function(e, device_type, sorter_number, device_number) {
@@ -472,6 +466,12 @@ ipcMain.on("change:induct", function(e, induct_id) {
 ipcMain.on("page:loaded", function(e) {
 	let ipListHtml = generateIpListHtml();
 	mainWindow.webContents.send("link:changed", ipListHtml, machineList, currentConnectedMachine, maintenanceIpList, logged_in_user_name);
+});
+ipcMain.on("status:ActiveAlarms", function(e,machineId) {
+	if(machineId>0){
+		let m = {"req" : 'status:ActiveAlarms', "machineId" : machineId};
+		sendMessageToServer(JSON.stringify(m));
+	}
 });
 
 
