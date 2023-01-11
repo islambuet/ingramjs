@@ -101,7 +101,6 @@ app.on('ready', function() {
 let previouslyConnected = 0;
 let alreadyConnected = 0;
 let currentConnectedMachine = 0;
-let currentViewName = '';
 /* const port = 10707;
 const host = "192.168.1.102"; */
 let port = store.get("ingram_server_port", "not_set");
@@ -361,12 +360,6 @@ ipcMain.on("get:views", function(e, machineId, view_name) {
 	if((machineId != 0) && (view_name != "diagonstics")) {
 		let m = {"req" : view_name, "id" : machineId};
 		sendMessageToServer(JSON.stringify(m));
-		if(currentViewName!=view_name){
-			//get status of active alrams for estop alarm once
-			currentViewName=view_name;
-			let m = {"req" : 'status:ActiveAlarms', "machineId" : machineId};
-			sendMessageToServer(JSON.stringify(m));
-		}
 	}
 });
 
@@ -457,7 +450,6 @@ ipcMain.on("get:filtered_alarm_hit_list", function(e, machineId, start_timestamp
 ipcMain.on("change:link", function(e, link) {
 	//console.log(link);
 	let linkFile = link + ".ejs";
-
 	mainWindow.loadFile(linkFile);
 });
 
