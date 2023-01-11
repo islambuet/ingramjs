@@ -450,7 +450,12 @@ ipcMain.on("get:filtered_alarm_hit_list", function(e, machineId, start_timestamp
 ipcMain.on("change:link", function(e, link) {
 	//console.log(link);
 	let linkFile = link + ".ejs";
-	mainWindow.loadFile(linkFile);
+	mainWindow.loadFile(linkFile).then(function (){
+		if(currentConnectedMachine>0){
+			let m = {"req" : 'status:ActiveAlarms', "machineId" : currentConnectedMachine};
+			sendMessageToServer(JSON.stringify(m));
+		}
+	});
 });
 
 ipcMain.on("change:modsort", function(e, device_type, sorter_number, device_number) {
