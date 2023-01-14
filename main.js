@@ -484,9 +484,9 @@ ipcMain.on("status:ActiveAlarms", function(e,machineId) {
 		sendMessageToServer(JSON.stringify(m));
 	}
 });
-ipcMain.on("get:StatisticsDaily", function(e,machineId,from_date,to_date) {
+ipcMain.on("get:StatisticsDaily", function(e,machineId,from_timestamp,to_timestamp) {
 	if(machineId>0){
-		let m = {"req" : 'get:StatisticsDaily', "machineId" : machineId,'from_date':from_date,'to_date':to_date};
+		let m = {"req" : 'get:StatisticsDaily', "machineId" : machineId,'from_timestamp':from_timestamp,'to_timestamp':to_timestamp};
 		sendMessageToServer(JSON.stringify(m));
 	}
 });

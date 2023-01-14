@@ -96,8 +96,17 @@ jQuery(document).ready(function() {
     jQuery("#btn_search").click(function() {
         let from_date = jQuery("#from_date").val();
         let to_date = jQuery("#to_date").val();
-        ipcRenderer.send("get:StatisticsDaily", selected_machine,from_date,to_date);
-        console.log("clicked",from_date,to_date);
+        let to_timestamp = moment(to_date, "M/D/YYYY").unix();
+        if(!to_timestamp){
+            to_timestamp=moment().startOf("day").unix();
+        }
+        let from_timestamp = moment(from_date, "M-D-YYYY").unix();
+        if(!from_timestamp){
+            from_timestamp=(to_timestamp-24*60*60*90);
+
+        }
+        to_timestamp+=(24*60*60-1);
+        ipcRenderer.send("get:StatisticsDaily", selected_machine,from_timestamp,to_timestamp);
     });
 
     jQuery("#ip_list_dropdown").change(function() {
@@ -122,89 +131,96 @@ jQuery(document).ready(function() {
 
 });
 
-// let bcr_chart = Highcharts.chart('bcr-chart', {
-//     chart: {
-//         type: 'spline',
-//         animation: Highcharts.svg, // don't animate in old IE
-//         marginRight: 10,
-//         borderColor: '#D3D3D3',
-//         borderWidth: 1
-//     },
-//
-//     time: {
-//         useUTC: false
-//     },
-//
-//     title: {
-//         text: 'BCR Read Rate'
-//     },
-//
-//     accessibility: {
-//         announceNewData: {
-//             enabled: true,
-//             minAnnounceInterval: 15000,
-//             announcementFormatter: function (allSeries, newSeries, newPoint) {
-//                 if (newPoint) {
-//                     return 'New point added. Value: ' + newPoint.y;
-//                 }
-//                 return false;
-//             }
-//         }
-//     },
-//
-//     xAxis: {
-//         type: 'datetime',
-//         tickInterval: 1000*60*60
-//     },
-//
-//     yAxis: {
-//         title: {
-//             text: null
-//         },
-//         tickInterval: 20,
-//         tickWidth: 1,
-//         tickLength: 5,
-//         min: 0,
-//         max: 100,
-//         lineColor: '#C0C0C0',
-//         lineWidth: 1,
-//         plotLines: [{
-//             value: 0,
-//             width: 1,
-//             color: '#808080'
-//         }]
-//     },
-//
-//     tooltip: {
-//         headerFormat: '<b>{series.name}</b><br/>',
-//         pointFormat: 'Time:{point.x:%Y-%m-%d %H:%M}<br/>Rate:{point.y:.2f}%'
-//     },
-//
-//     legend: {
-//         enabled: true
-//     },
-//
-//     exporting: {
-//         enabled: true,
-//         buttons: {
-//             contextButton: {
-//                 menuItems: ['downloadCSV', 'separator', 'downloadPDF', 'downloadPNG']
-//             }
-//         }
-//     },
-//
-//     credits: {
-//         enabled: false
-//     },
-//
-//     series: [{
-//         name: 'BCR Read Rate',
-//         marker: {
-//             enabled: false
-//         },
-//         data: []
-//     }]
-// });
+let bcr_chart = Highcharts.chart('bcr-chart', {
+    chart: {
+        type: 'spline',
+        animation: Highcharts.svg, // don't animate in old IE
+        marginRight: 10,
+        borderColor: '#D3D3D3',
+        borderWidth: 1
+    },
+
+    time: {
+        useUTC: false
+    },
+
+    title: {
+        text: 'BCR Read Rate'
+    },
+
+    accessibility: {
+        announceNewData: {
+            enabled: true,
+            minAnnounceInterval: 15000,
+            announcementFormatter: function (allSeries, newSeries, newPoint) {
+                if (newPoint) {
+                    return 'New point added. Value: ' + newPoint.y;
+                }
+                return false;
+            }
+        }
+    },
+
+    xAxis: {
+        type: 'datetime',
+        tickInterval: 1000*60*60*24,
+        labels: {
+            // rotation: 90,
+            // formatter: function() {
+            //     //return Highcharts.dateFormat('%b-%e-%Y', this.value);
+            //     //return moment.unix(this.value/1000).format("YYYY-MM-DD");
+            // }
+        }
+    },
+
+    yAxis: {
+        title: {
+            text: null
+        },
+        tickInterval: 20,
+        tickWidth: 1,
+        tickLength: 5,
+        min: 0,
+        max: 100,
+        lineColor: '#C0C0C0',
+        lineWidth: 1,
+        plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+        }]
+    },
+
+    tooltip: {
+        headerFormat: '<b>{series.name}</b><br/>',
+        pointFormat: 'Date:{point.x:%Y-%m-%d}<br/>Rate:{point.y:.2f}%'
+    },
+
+    legend: {
+        enabled: true
+    },
+
+    exporting: {
+        enabled: true,
+        buttons: {
+            contextButton: {
+                menuItems: ['downloadCSV', 'separator', 'downloadPDF', 'downloadPNG']
+            }
+        }
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    series: [{
+        name: 'BCR Read Rate',
+        marker: {
+            enabled: false
+        },
+        data: []
+    }]
+});
 //
 // let tput_chart = Highcharts.chart('tput-chart', {
 //     chart: {
@@ -363,7 +379,38 @@ ipcRenderer.on("render:statistics-daily", function(e, data_result) {
 
 });
 ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
-    console.log(machineId,statistics)
+    //console.log(statistics)
+    let statistics_by_day={};
+    let bcr_chart_data = [];
+    for (let id in statistics) {
+        let timestamp_day=moment(moment.unix(statistics[id]['created_at_timestamp']).format("YYYY-MM-DD")).unix();
+        if(!statistics_by_day[timestamp_day]){
+            statistics_by_day[timestamp_day]=statistics[id];
+        }
+        else{
+            for(let key in statistics[id]){
+                if(!(['created_at_timestamp','created_at'].includes(key.toString()))){
+                    statistics_by_day[timestamp_day][key]+=statistics[id][key];
+                }
+            }
+        }
+    }
+    //console.log(statistics_by_day);
+    for (let timestamp_day in statistics_by_day) {
+        let total_read=Number(statistics_by_day[timestamp_day]['total_read']);
+        let valid=Number(statistics_by_day[timestamp_day]['valid']);
+        let bcr_read_rate = 0;
+        if(total_read > 0) {
+            bcr_read_rate = (valid / total_read) * 100;
+        }
+        bcr_chart_data.push({
+            x:timestamp_day*1000,
+            y: bcr_read_rate
+        });
+    }
+    //console.log(bcr_chart_data)
+    bcr_chart.series[0].setData(bcr_chart_data, true);
+
 
 });
 ipcRenderer.on("status:ActiveAlarms", function(e,machineId, activeAlarms) {
