@@ -4,6 +4,17 @@
             <div class="row m-0" id="big-chart-area">
                 <div class="col-lg-12">
                     <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="from_date" placeholder="From date">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="to_date" placeholder="To date">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary" id="btn_search">Filter</button>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-lg-12" id="bcr-chart" style="height: 200px;">BCR Chart</div>
                     </div>
                     <div class="row mt-2">
@@ -59,7 +70,8 @@
 <%- include('footer', {currentMenu: 'statistics-daily'}); %>
 <script src="js/jquery-bootstrap.js"></script>
 <script src="js/nav.js"></script>
-
+<script src="js/daterangepicker/moment.min.js"></script>
+<script src="js/datepicker/bootstrap-datepicker.min.js"></script>
 <script>
 const Highcharts = require('highcharts/highstock')
 require('highcharts/modules/exporting')(Highcharts);
@@ -72,6 +84,21 @@ let currentMousePos = { x: -1, y: -1 };
 let statistics_started = 0;
 
 jQuery(document).ready(function() {
+    jQuery("#from_date").datepicker({
+        autoclose: true,
+        format: 'mm-dd-yyyy'
+    });
+
+    jQuery("#to_date").datepicker({
+        autoclose: true,
+        format: 'mm-dd-yyyy'
+    });
+    jQuery("#btn_search").click(function() {
+        let from_date = jQuery("#from_date").val();
+        let to_date = jQuery("#to_date").val();
+        ipcRenderer.send("get:StatisticsDaily", selected_machine,from_date,to_date);
+        console.log("clicked",from_date,to_date);
+    });
 
     jQuery("#ip_list_dropdown").change(function() {
         selected_machine = jQuery(this).val();
@@ -90,7 +117,9 @@ jQuery(document).ready(function() {
         }
         ipcRenderer.send("status:ActiveAlarms", selected_machine);
         ipcRenderer.send("get:views", selected_machine, "statistics-daily");
+        $("#btn_search").trigger("click");
     });
+
 });
 
 // let bcr_chart = Highcharts.chart('bcr-chart', {
@@ -368,6 +397,10 @@ ipcRenderer.on("render:statistics-daily", function(e, data_result) {
         let tr_html = '<tr><td colspan="6">No active alarm to display</td></tr>';
         jQuery("#active_alarm_tbody").append(tr_html);
     }
+
+});
+ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
+    console.log(machineId,statistics)
 
 });
 </script>

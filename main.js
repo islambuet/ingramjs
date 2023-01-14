@@ -282,7 +282,11 @@ function processReceivedJsonObjects(jsonObjects) {
 				let activeAlarms=jsonObj.activeAlarms;
 				mainWindow.webContents.send("status:ActiveAlarms",machineId, activeAlarms);
 			}
-			
+			else if(resType == "get:StatisticsDaily") {
+				let machineId=jsonObj.machineId;
+				let statistics=jsonObj.statistics;
+				mainWindow.webContents.send("get:StatisticsDaily",machineId, statistics);
+			}
 		}
 	});
 }
@@ -477,6 +481,12 @@ ipcMain.on("page:loaded", function(e) {
 ipcMain.on("status:ActiveAlarms", function(e,machineId) {
 	if(machineId>0){
 		let m = {"req" : 'status:ActiveAlarms', "machineId" : machineId};
+		sendMessageToServer(JSON.stringify(m));
+	}
+});
+ipcMain.on("get:StatisticsDaily", function(e,machineId,from_date,to_date) {
+	if(machineId>0){
+		let m = {"req" : 'get:StatisticsDaily', "machineId" : machineId,'from_date':from_date,'to_date':to_date};
 		sendMessageToServer(JSON.stringify(m));
 	}
 });
