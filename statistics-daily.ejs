@@ -357,14 +357,18 @@ jQuery(document).ready(function() {
 
 
 ipcRenderer.on("render:statistics-daily", function(e, data_result) {
-    console.log(data_result);
-
     //mode
     machine_mode = data_result['mode'];
     changeMachineNameBg(machine_mode);
 
+});
+ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
+    console.log(machineId,statistics)
+
+});
+ipcRenderer.on("status:ActiveAlarms", function(e,machineId, activeAlarms) {
     //alarms
-    let alarms_result = data_result['alarms'];
+    let alarms_result = activeAlarms;
     jQuery("#active_alarm_tbody").empty();
     if(!jQuery.isEmptyObject(alarms_result)) {
         for (let k in alarms_result) {
@@ -397,11 +401,6 @@ ipcRenderer.on("render:statistics-daily", function(e, data_result) {
         let tr_html = '<tr><td colspan="6">No active alarm to display</td></tr>';
         jQuery("#active_alarm_tbody").append(tr_html);
     }
-
-});
-ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
-    console.log(machineId,statistics)
-
 });
 </script>
 </body>
