@@ -220,14 +220,21 @@ function processReceivedJsonObjects(jsonObjects) {
 			} else if(resType == "induct") {
 				let inductResult = jsonObj.result;
 				mainWindow.webContents.send("render:induct", inductResult);
-			} else if(resType == "statistics") {
+			}
+			else if(resType == "statistics") {
 				let statisticsViewResult = jsonObj.result;
 				mainWindow.webContents.send("render:statistics", statisticsViewResult);
-			} else if(resType == "device_status") {
+			}
+			else if(resType == "statistics-daily") {
+				let statisticsViewResult = jsonObj.result;
+				mainWindow.webContents.send("render:statistics-daily", statisticsViewResult);
+			}
+			else if(resType == "device_status") {
 				let deviceStatusResult = jsonObj.result;
 				//console.log(deviceStatusResult);
 				mainWindow.webContents.send("render:device_status", deviceStatusResult);
-			}  else if(resType == "device_titles") {
+			}
+			else if(resType == "device_titles") {
 				let deviceTitlesResult = jsonObj.result;
 				//console.log(deviceTitlesResult);
 				mainWindow.webContents.send("render:device_titles", deviceTitlesResult);
