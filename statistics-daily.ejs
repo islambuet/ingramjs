@@ -18,7 +18,7 @@
                         <div class="col-lg-12" id="bcr-chart" style="height: 200px;">BCR Chart</div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-lg-12" id="tput-chart" style="height: 200px;">TPUT Chart</div>
+                        <div class="col-lg-12" id="sc-chart" style="height: 200px;">SC Chart</div>
                     </div>
                 </div>
             </div>
@@ -221,156 +221,94 @@ let bcr_chart = Highcharts.chart('bcr-chart', {
         data: []
     }]
 });
-//
-// let tput_chart = Highcharts.chart('tput-chart', {
-//     chart: {
-//         type: 'spline',
-//         animation: Highcharts.svg, // don't animate in old IE
-//         marginRight: 10,
-//         borderColor: '#D3D3D3',
-//         borderWidth: 1
-//     },
-//
-//     time: {
-//         useUTC: false
-//     },
-//
-//     title: {
-//         text: 'Tput'
-//     },
-//
-//     accessibility: {
-//         announceNewData: {
-//             enabled: true,
-//             minAnnounceInterval: 15000,
-//             announcementFormatter: function (allSeries, newSeries, newPoint) {
-//                 if (newPoint) {
-//                     return 'New point added. Value: ' + newPoint.y;
-//                 }
-//                 return false;
-//             }
-//         }
-//     },
-//
-//     xAxis: {
-//         type: 'datetime',
-//         tickInterval: 1000*60*60
-//     },
-//
-//     yAxis: {
-//         title: {
-//             text: null
-//         },
-//         labels: {
-//             format: '{value}'
-//         },
-//         tickInterval: 2000,
-//         tickWidth: 1,
-//         tickLength: 5,
-//         min: 0,
-//         max: 6000,
-//         lineColor: '#C0C0C0',
-//         lineWidth: 1,
-//         plotLines: [{
-//             value: 0,
-//             width: 1,
-//             color: '#808080'
-//         }]
-//     },
-//
-//     tooltip: {
-//         headerFormat: '<b>{series.name}</b><br/>',
-//         pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
-//     },
-//
-//     legend: {
-//         enabled: true
-//     },
-//
-//     exporting: {
-//         enabled: true,
-//         buttons: {
-//             contextButton: {
-//                 menuItems: ['downloadCSV', 'separator', 'downloadPDF', 'downloadPNG']
-//             }
-//         }
-//     },
-//
-//     credits: {
-//         enabled: false
-//     },
-//
-//     series: [{
-//         name: 'Tput',
-//         marker: {
-//                 enabled: false
-//         },
-//         data: []
-//     }]
-// });
-//
-// let pie_chart = Highcharts.chart('pie-chart', {
-//     chart: {
-//         plotBackgroundColor: null,
-//         plotBorderWidth: null,
-//         plotShadow: false,
-//         type: 'pie',
-//         borderColor: '#D3D3D3',
-//         borderWidth: 1
-//     },
-//     credits: {
-//         enabled: false
-//     },
-//     title: {
-//         text: 'Total Products: 0'
-//     },
-//     tooltip: {
-//         pointFormat: '<b>{point.percentage:.1f}%</b>'
-//     },
-//     accessibility: {
-//         point: {
-//             valueSuffix: '%'
-//         }
-//     },
-//     navigation: {
-//         buttonOptions: {
-//             enabled: false
-//         }
-//     },
-//     legend: {
-//         align: 'right',
-//         verticalAlign: 'middle',
-//         layout: 'vertical',
-//         itemMarginBottom:8,
-//         symbolHeight: 12,
-//         symbolWidth: 12,
-//         symbolRadius: 0,
-//         itemStyle: {
-//             fontWeight: 'normal',
-//             fontSize: '12px',
-//             cursor: "pointer",
-//             color: '#000'
-//         }
-//     },
-//     plotOptions: {
-//         pie: {
-//             allowPointSelect: true,
-//             cursor: 'pointer',
-//             dataLabels: {
-//                 enabled: true,
-//                 format: '{point.percentage:.1f}'
-//             },
-//             showInLegend: true
-//         }
-//     },
-//     series: [{
-//         name: 'Sorting Codes',
-//         colorByPoint: true,
-//         data: []
-//     }]
-// });
 
+let sc_chart = Highcharts.chart('sc-chart', {
+    chart: {
+        type: 'column',
+        animation: Highcharts.svg, // don't animate in old IE
+        marginRight: 10,
+        borderColor: '#D3D3D3',
+        borderWidth: 1
+    },
 
+    time: {
+        useUTC: false
+    },
+
+    title: {
+        text: 'Products'
+    },
+
+    accessibility: {
+        announceNewData: {
+            enabled: true,
+            minAnnounceInterval: 15000,
+            announcementFormatter: function (allSeries, newSeries, newPoint) {
+                if (newPoint) {
+                    return 'New point added. Value: ' + newPoint.y;
+                }
+                return false;
+            }
+        }
+    },
+    xAxis: {
+        type: 'datetime',
+        tickInterval: 1000*60*60*24,
+        labels: {
+            // rotation: 90,
+            // formatter: function() {
+            //     //return Highcharts.dateFormat('%b-%e-%Y', this.value);
+            //     //return moment.unix(this.value/1000).format("YYYY-MM-DD");
+            // }
+        }
+    },
+
+    yAxis: {
+        title: {
+            text: null
+        },
+        tickInterval: 20,
+        tickWidth: 1,
+        tickLength: 5,
+        min: 0,
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    legend: {
+        enabled: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        },
+    },
+    exporting: {
+        enabled: true,
+        buttons: {
+            contextButton: {
+                menuItems: ['downloadCSV', 'separator', 'downloadPDF', 'downloadPNG']
+            }
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    series: [
+        {name: 'Total',data: [],color: '#27e22b'},
+        {name: 'SC1',data: [],color: '#7cb5ec'},
+        {name: 'SC2',data: [],color: '#434348'},
+        {name: 'SC3',data: [],color: '#90ed7d'},
+        {name: 'SC4',data: [],color: '#f7a35c'},
+        {name: 'SC5',data: [],color: '#8085e9'},
+    ]
+});
 
 ipcRenderer.on("render:statistics-daily", function(e, data_result) {
     //mode
@@ -381,7 +319,6 @@ ipcRenderer.on("render:statistics-daily", function(e, data_result) {
 ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
     //console.log(statistics)
     let statistics_by_day={};
-    let bcr_chart_data = [];
     for (let id in statistics) {
         let timestamp_day=moment(moment.unix(statistics[id]['created_at_timestamp']).format("YYYY-MM-DD")).unix();
         if(!statistics_by_day[timestamp_day]){
@@ -396,6 +333,13 @@ ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
         }
     }
     //console.log(statistics_by_day);
+    let bcr_chart_data = [];
+    let sc = [];
+    let sc1= [];
+    let sc2= [];
+    let sc3= [];
+    let sc4= [];
+    let sc5= [];
     for (let timestamp_day in statistics_by_day) {
         let total_read=Number(statistics_by_day[timestamp_day]['total_read']);
         let valid=Number(statistics_by_day[timestamp_day]['valid']);
@@ -407,11 +351,39 @@ ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
             x:timestamp_day*1000,
             y: bcr_read_rate
         });
+        sc1.push({
+            x:timestamp_day*1000,
+            y: statistics_by_day[timestamp_day]['sc1']
+        });
+        sc2.push({
+            x:timestamp_day*1000,
+            y: statistics_by_day[timestamp_day]['sc2']
+        });
+        sc3.push({
+            x:timestamp_day*1000,
+            y: statistics_by_day[timestamp_day]['sc3']
+        });
+        sc4.push({
+            x:timestamp_day*1000,
+            y: statistics_by_day[timestamp_day]['sc4']
+        });
+        sc5.push({
+            x:timestamp_day*1000,
+            y: statistics_by_day[timestamp_day]['sc5']
+        });
+        sc.push({
+            x:timestamp_day*1000,
+            y: statistics_by_day[timestamp_day]['sc1']+statistics_by_day[timestamp_day]['sc2']+statistics_by_day[timestamp_day]['sc3']+statistics_by_day[timestamp_day]['sc4']+statistics_by_day[timestamp_day]['sc5']
+        });
     }
-    //console.log(bcr_chart_data)
+    //console.log(sc)
     bcr_chart.series[0].setData(bcr_chart_data, true);
-
-
+    sc_chart.series[0].setData(sc, true);
+    sc_chart.series[1].setData(sc1, true);
+    sc_chart.series[2].setData(sc2, true);
+    sc_chart.series[3].setData(sc3, true);
+    sc_chart.series[4].setData(sc4, true);
+    sc_chart.series[5].setData(sc5, true);
 });
 ipcRenderer.on("status:ActiveAlarms", function(e,machineId, activeAlarms) {
     //alarms
