@@ -307,12 +307,11 @@ let sc_chart = Highcharts.chart('sc-chart', {
         enabled: false
     },
     series: [
-        // {name: 'Total',data: [],color: '#27e22b'},
-        {name: 'SC1',data: [],color: '#7cb5ec'},
-        {name: 'SC2',data: [],color: '#434348'},
-        {name: 'SC3',data: [],color: '#90ed7d'},
-        {name: 'SC4',data: [],color: '#f7a35c'},
         {name: 'SC5',data: [],color: '#8085e9'},
+        {name: 'SC4',data: [],color: '#f7a35c'},
+        {name: 'SC3',data: [],color: '#90ed7d'},
+        {name: 'SC2',data: [],color: '#434348'},
+        {name: 'SC1',data: [],color: '#7cb5ec'},
     ]
 });
 
@@ -340,7 +339,6 @@ ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
     }
     //console.log(statistics_by_day);
     let bcr_chart_data = [];
-    // let sc = [];
     let sc1= [];
     let sc2= [];
     let sc3= [];
@@ -377,19 +375,15 @@ ipcRenderer.on("get:StatisticsDaily", function(e,machineId, statistics) {
             x:timestamp_day*1000,
             y: statistics_by_day[timestamp_day]['sc5']
         });
-        // sc.push({
-        //     x:timestamp_day*1000,
-        //     y: statistics_by_day[timestamp_day]['sc1']+statistics_by_day[timestamp_day]['sc2']+statistics_by_day[timestamp_day]['sc3']+statistics_by_day[timestamp_day]['sc4']+statistics_by_day[timestamp_day]['sc5']
-        // });
+
     }
-    //console.log(sc)
+
     bcr_chart.series[0].setData(bcr_chart_data, true);
-    //sc_chart.series[0].setData(sc, true);
-    sc_chart.series[0].setData(sc1, true);
-    sc_chart.series[1].setData(sc2, true);
+    sc_chart.series[4].setData(sc1, true);
+    sc_chart.series[3].setData(sc2, true);
     sc_chart.series[2].setData(sc3, true);
-    sc_chart.series[3].setData(sc4, true);
-    sc_chart.series[4].setData(sc5, true);
+    sc_chart.series[1].setData(sc4, true);
+    sc_chart.series[0].setData(sc5, true);
 });
 ipcRenderer.on("status:ActiveAlarms", function(e,machineId, activeAlarms) {
     //alarms
