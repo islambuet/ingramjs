@@ -197,7 +197,8 @@ function processReceivedJsonObjects(jsonObjects) {
 
 			} else if(resType == "general_view") {
 				let generalViewResult = jsonObj.result;
-				mainWindow.webContents.send("render:general_view", generalViewResult);
+				//mainWindow.webContents.send("render:general_view", generalViewResult);
+				mainWindow.webContents.send("render:general_view", jsonObj);
 			} else if(resType == "alarms_list") {
 				let alarmsListResult = jsonObj.result;
 				mainWindow.webContents.send("render:alarms_list", alarmsListResult);

@@ -10,6 +10,7 @@
 			<button class="btn btn-outline-success induct-control-btn mt-2" id="induct-7-btn" data-induct-gui-id="7">Disable Tfold-1</button>
 		</div>
         <div class="col-lg-8" style="padding: 0 50px; text-align: center;">
+			<div style="position: absolute;top:200px;right:0;font-size: 25px">Total Lifetime Products: <b><span id="lifetime_counter">11111110</span></b></div>
 			<svg style="height: 630px;" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 480">
 				<defs>
 					<style>
@@ -697,8 +698,17 @@ jQuery(document).ready(function() {
 	});
 });
 
-ipcRenderer.on("render:general_view", function(e, general_view_result) {
-    //BinEnabled=2=#27e22b, 
+ipcRenderer.on("render:general_view", function(e, responseJson) {
+	//lifetime statistics
+	let statistics_lifetime=responseJson.statistics_lifetime;
+
+	for(let id in statistics_lifetime){
+		let stat=statistics_lifetime[id];
+		$("#lifetime_counter").text(stat['sc1']+stat['sc2']+stat['sc3']+stat['sc4']+stat['sc5']);
+		//console.log(id,statistics_lifetime[id]);
+	}
+	let general_view_result=responseJson.result;//replaced previous params
+    //BinEnabled=2=#27e22b,
 	//BinPartiallyFull=3=blinking #4d80ff/ now #fff, 
 	//BinFull=5=#4d80ff, 
 	//BinDisabled with traymissing on=4=#6d6e70, 
